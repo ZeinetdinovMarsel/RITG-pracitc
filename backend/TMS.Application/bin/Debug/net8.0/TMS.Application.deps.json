@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TMS.Application/1.0.0": {
+        "dependencies": {
+          "TMS.Core": "1.0.0"
+        },
+        "runtime": {
+          "TMS.Application.dll": {}
+        }
+      },
+      "TMS.Core/1.0.0": {
+        "runtime": {
+          "TMS.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TMS.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TMS.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
