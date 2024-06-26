@@ -1,6 +1,6 @@
 ﻿using TMS.Core.Models;
 
-namespace TMS.DataAccess.Repositories
+namespace TMS.Core.Abstractions
 {
     public interface ITsksRepository
     {

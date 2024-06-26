@@ -1,6 +1,6 @@
 ﻿
 using TMS.Core.Models;
-using TMS.DataAccess.Repositories;
+using TMS.Core.Abstractions;
 
 namespace TMS.Application.Services
 {

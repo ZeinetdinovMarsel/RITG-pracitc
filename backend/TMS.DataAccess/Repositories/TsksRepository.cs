@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TMS.Core.Models;
 using TMS.DataAccess.Entities;
+using TMS.Core.Abstractions;
 
 namespace TMS.DataAccess.Repositories
 {

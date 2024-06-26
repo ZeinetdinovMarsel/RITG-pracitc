@@ -9,12 +9,12 @@ export interface TaskRequest {
 }
 
 export const getAllTasks = async () => {
-    const response = await fetch("http://localhost:5183/Tsks")
+    const response = await fetch("https://localhost:7049/tsks")
     return response.json();
 }
 
 export const createTask = async (taskrequest: TaskRequest) => {
-    await fetch("http://localhost:5183/Tsks", {
+    await fetch("https://localhost:7049/tsks", {
         method: "POST",
         headers: {
             "content-type": "application/json",
@@ -24,7 +24,7 @@ export const createTask = async (taskrequest: TaskRequest) => {
 }
 
 export const updateTask = async (id: string, taskrequest: TaskRequest) => {
-    await fetch(`http://localhost:5183/Tsks/${id}`, {
+    await fetch(`https://localhost:7049/tsks/${id}`, {
         method: "PUT",
         headers: {
             "content-type": "application/json",
@@ -34,7 +34,7 @@ export const updateTask = async (id: string, taskrequest: TaskRequest) => {
 }
 
 export const deleteTask = async (id: string) => {
-    await fetch(`http://localhost:5183/Tsks/${id}`, {
+    await fetch(`https://localhost:7049/tsks/${id}`, {
         method: "DELETE",
     });
 }

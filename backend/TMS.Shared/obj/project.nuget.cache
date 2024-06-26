@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OvoEEbw/3RU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Shared\\TMS.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marse\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

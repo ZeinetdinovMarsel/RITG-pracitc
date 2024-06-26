@@ -1,6 +1,6 @@
 ﻿using TMS.Core.Models;
 
-namespace TMS.Application.Services
+namespace TMS.Core.Abstractions
 {
     public interface ITsksService
     {

@@ -13,13 +13,14 @@ import {
 import Title from "antd/es/typography/Title"
 import { CreateUpdateTask, Mode } from "../components/CreateUpdateTask";
 
+
 export default function TasksPage() {
     const defaultValues = {
         title: "",
         description: "",
         assignedUserId: 0,
         priority: "",
-        status: "",
+        status: "Не начато",
         startDate: new Date,
         endDate: new Date
     } as Task

@@ -1,13 +1,15 @@
+import { format } from 'date-fns';
 
-interface Props{
+interface Props {
     title: string;
     description: string;
     assignedUserId: number;
     priority: string;
-    status: string
+    status: string;
     startDate: Date;
     endDate: Date;
 }
+
 export const CardTitle = ({
     title,
     description,
@@ -16,21 +18,19 @@ export const CardTitle = ({
     status,
     startDate,
     endDate
-}:Props)=>{
-    return(
+}: Props) => {
+    return (
         <div style={{
             display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
+            flexDirection: "column",
             justifyContent: "space-between",
-
         }}>
-            <p className="card_title">Задача:</p>
-            <p className="card_title">{title}</p>
-            <p className="card_price">{description}</p>
-            <p className="card_price">{assignedUserId}</p>
-            <p className="card_price">{priority}</p>
-            <p className="card_price">{status}</p>
+            <p className="card_title">Задача: {title}</p>
+            <p className="card_title">Назначенный пользователь: {assignedUserId}</p>
+            <p className="card_title">Приоритет: {priority}</p>
+            <p className="card_title">Статус: {status}</p>
+            <p className="card_price">Дата начала: {format(startDate, 'dd.MM.yyyy')}</p>
+            <p className="card_price">Дата конца: {format(endDate, 'dd.MM.yyyy')}</p>
         </div>
-    )
-}
+    );
+};

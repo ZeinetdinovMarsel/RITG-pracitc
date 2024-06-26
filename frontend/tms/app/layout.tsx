@@ -5,8 +5,9 @@ import {Menu} from "antd";
 import Link from "next/link";
 
 const items = [
-  { key: "Home", label: <Link href={"/"}>Home</Link> },
-  { key: "Tasks", label: <Link href={"/tasks"}>Tasks</Link> }
+  { key: "Home", label: <Link href={"/"}>Главная</Link> },
+  { key: "Tasks", label: <Link href={"/tasks"}>Задачи</Link> },
+  { key: "Auth", label: <Link href={"/auth"}>Авторизация/Регистрация</Link> }
 ];
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
           </Header>
           <Content style={{ padding: "0 48px" }}>{children}</Content>
           <Footer style={{ textAlign: "center" }}>
-            Prototype of Task Management System 2024 by Zeinetdinov Marsel
+            Прототип Task Management System 2024 Зейнетдинова Марселя
           </Footer>
 
         </Layout>

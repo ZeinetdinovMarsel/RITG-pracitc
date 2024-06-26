@@ -30,3 +30,5 @@ C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Application\obj\Debug\net8.
 C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Application\obj\Debug\net8.0\refint\TMS.Application.dll
 C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Application\obj\Debug\net8.0\TMS.Application.pdb
 C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Application\obj\Debug\net8.0\ref\TMS.Application.dll
+C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Application\bin\Debug\net8.0\TMS.DataAccess.dll
+C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Application\bin\Debug\net8.0\TMS.DataAccess.pdb

@@ -1,8 +1,11 @@
 import Modal from "antd/es/modal/Modal";
 import { TaskRequest } from "../services/tasks";
 import { useEffect, useState } from "react";
-import Input from "antd/es/input/Input"
-import TextArea from "antd/es/input/TextArea"
+import Input from "antd/es/input/Input";
+import TextArea from "antd/es/input/TextArea";
+import Select from "antd/es/select";
+import { Option } from "antd/es/mentions";
+import { format } from 'date-fns';
 
 interface Props {
     mode: Mode;
@@ -12,10 +15,12 @@ interface Props {
     handleCreate: (request: TaskRequest) => void;
     handleUpdate: (id: string, request: TaskRequest) => void;
 }
+
 export enum Mode {
     Create,
     Edit,
 }
+
 export const CreateUpdateTask = ({
     mode,
     values,
@@ -29,19 +34,18 @@ export const CreateUpdateTask = ({
     const [assignedUserId, setAssignedUserId] = useState<number>(1);
     const [priority, setPriority] = useState<string>("");
     const [status, setStatus] = useState<string>("");
-    const [startDate, setStartDate] = useState<Date>(new Date);
-    const [endDate, setEndDate] = useState<Date>(new Date);
+    const [startDate, setStartDate] = useState<string>(format(new Date(), 'yyyy-MM-dd'));
+    const [endDate, setEndDate] = useState<string>(format(new Date(), 'yyyy-MM-dd'));
 
     useEffect(() => {
-        setTitle(values.title)
-        setDescription(values.description)
-        setAssignedUserId(values.assignedUserId)
-        setPriority(values.priority)
-        setStatus(values.status)
-        setStartDate(values.startDate)
-        setEndDate(values.endDate)
-    }, [values])
-
+        setTitle(values.title);
+        setDescription(values.description);
+        setAssignedUserId(values.assignedUserId);
+        setPriority(values.priority);
+        setStatus(values.status);
+        setStartDate(format(new Date(values.startDate), 'yyyy-MM-dd'));
+        setEndDate(format(new Date(values.endDate), 'yyyy-MM-dd'));
+    }, [values]);
 
     const handleOnOk = async () => {
         const taskRequest = {
@@ -50,14 +54,15 @@ export const CreateUpdateTask = ({
             assignedUserId,
             priority,
             status,
-            startDate,
-            endDate
+            startDate: new Date(startDate),
+            endDate: new Date(endDate)
         };
 
-        mode == Mode.Create ? handleCreate(taskRequest) : handleUpdate(values.id, taskRequest);
+        mode === Mode.Create ? handleCreate(taskRequest) : handleUpdate(values.id, taskRequest);
     };
+
     return (
-        < Modal
+        <Modal
             title={
                 mode === Mode.Create ? "Добавить задачу" : "Редактировать задачу"
             }
@@ -83,27 +88,39 @@ export const CreateUpdateTask = ({
                     onChange={(e) => setAssignedUserId(Number(e.target.value))}
                     placeholder="Id на ком задача"
                 />
-                <Input
+                <Select
                     value={priority}
-                    onChange={(e) => setPriority(e.target.value)}
+                    onChange={(value) => setPriority(value)}
                     placeholder="Приоритет"
-                />
-                <Input
+                    style={{ width: '100%', marginBottom: '16px' }}
+                >
+                    <Option value="Низкий">Низкий</Option>
+                    <Option value="Средний">Средний</Option>
+                    <Option value="Высокий">Высокий</Option>
+                </Select>
+                <Select
                     value={status}
-                    onChange={(e) => setStatus(e.target.value)}
+                    onChange={(value) => setStatus(value)}
                     placeholder="Статус"
-                />
+                    style={{ width: '100%', marginBottom: '16px' }}
+                >
+                    <Option value="Не начато">Не начато</Option>
+                    <Option value="В процессе">В процессе</Option>
+                    <Option value="Завершено">Завершено</Option>
+                </Select>
                 <Input
                     value={startDate}
                     onChange={(e) => setStartDate(e.target.value)}
                     placeholder="Время начала"
+                    type="date"
                 />
                 <Input
                     value={endDate}
                     onChange={(e) => setEndDate(e.target.value)}
                     placeholder="Время конца"
+                    type="date"
                 />
             </div>
-        </Modal >
+        </Modal>
     );
 };

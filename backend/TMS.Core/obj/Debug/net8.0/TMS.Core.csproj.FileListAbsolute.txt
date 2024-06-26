@@ -22,3 +22,4 @@ C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Core\obj\Debug\net8.0\TMS.C
 C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Core\obj\Debug\net8.0\refint\TMS.Core.dll
 C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Core\obj\Debug\net8.0\TMS.Core.pdb
 C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Core\obj\Debug\net8.0\ref\TMS.Core.dll
+C:\Users\marse\source\repos\RITG-pracitc\backend\TMS.Core\obj\Debug\net8.0\TMS.Core.csproj.AssemblyReference.cache
