@@ -10,6 +10,8 @@ using TMS.Application.Services;
 using TMS.Core.Abstractions;
 using TMS.Core.Models;
 using Azure.Core;
+using TMS.API.Extentions;
+using TMS.Core.Enums;
 
 namespace TMS.API.Endpoints
 {
@@ -17,10 +19,10 @@ namespace TMS.API.Endpoints
     {
         public static IEndpointRouteBuilder MapTsksEndpoints(this IEndpointRouteBuilder app)
         {
-            app.MapGet("tsks", GetTsks);
-            app.MapPost("tsks", CreateTsk).RequireAuthorization();
-            app.MapPut("tsks/{id:guid}", UpdateTsk).RequireAuthorization();
-            app.MapDelete("tsks/{id:guid}", DeleteTsk);
+            app.MapGet("tsks", GetTsks).RequirePermissions(Permission.Read);
+            app.MapPost("tsks", CreateTsk).RequirePermissions(Permission.Create);
+            app.MapPut("tsks/{id:guid}", UpdateTsk).RequirePermissions(Permission.Update);
+            app.MapDelete("tsks/{id:guid}", DeleteTsk).RequirePermissions(Permission.Delete);
 
             return app;
         }

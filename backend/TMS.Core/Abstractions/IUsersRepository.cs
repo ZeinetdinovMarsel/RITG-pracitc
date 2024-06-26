@@ -1,4 +1,5 @@
-﻿using TMS.Core.Models;
+﻿using TMS.Core.Enums;
+using TMS.Core.Models;
 
 namespace TMS.Core.Abstractions
 {
@@ -6,5 +7,6 @@ namespace TMS.Core.Abstractions
     {
         Task Add(User user);
         Task<User> GetByEmail(string email);
+        Task<HashSet<Permission>> GetUserPermissions(Guid userId);
     }
 }

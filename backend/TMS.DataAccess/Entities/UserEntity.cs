@@ -10,5 +10,6 @@
 
         public string Email { get; set; } = string.Empty;
 
+        public ICollection<RoleEntity> Roles { get; set; } = [];
     }
 }

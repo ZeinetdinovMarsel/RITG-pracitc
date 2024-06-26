@@ -10,8 +10,6 @@ using TMS.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection(nameof(JwtOptions)));
-builder.Services.AddApiAuthentification(builder.Services.BuildServiceProvider().GetRequiredService<IOptions<JwtOptions>>());
 
 
 
@@ -33,6 +31,9 @@ builder.Services.AddScoped<UsersService>();
 builder.Services.AddScoped<ITsksRepository, TsksRepository>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection(nameof(JwtOptions)));
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection(nameof(AuthorizationOptions)));
+builder.Services.AddApiAuthentification(builder.Services.BuildServiceProvider().GetRequiredService<IOptions<JwtOptions>>());
 
 
 builder.Services.AddControllers();

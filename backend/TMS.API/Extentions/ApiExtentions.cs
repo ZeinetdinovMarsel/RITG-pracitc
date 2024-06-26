@@ -1,16 +1,20 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.CodeDom;
 using System.Text;
 using TMS.API.Endpoints;
+using TMS.Application;
+using TMS.Core.Enums;
 using TMS.Infrastructure;
 namespace TMS.API.Extentions
 {
     public static class ApiExtentions
     {
-        public static void AddMappedEndpoints(this IEndpointRouteBuilder app)
+        public static void AddMappedEndpoints(
+            this IEndpointRouteBuilder app)
         {
             app.MapTsksEndpoints();
             app.MapUsersEndpoints();
@@ -43,7 +47,18 @@ namespace TMS.API.Extentions
                 };
             });
 
+            services.AddScoped<IPermissionService, PermissionService>();
+            services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
+            
             services.AddAuthorization();
+        }
+
+        public static IEndpointConventionBuilder RequirePermissions<TBuilder>(
+            this TBuilder builder, params Permission[] permissions)
+            where TBuilder : IEndpointConventionBuilder
+        {
+            return builder.RequireAuthorization(policy =>
+            policy.AddRequirements(new PermissionRequirement(permissions)));
         }
     }
 }
