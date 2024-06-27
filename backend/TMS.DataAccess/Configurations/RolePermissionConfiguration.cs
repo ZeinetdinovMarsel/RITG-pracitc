@@ -1,43 +1,33 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System.Net;
 using TMS.Core.Enums;
+using TMS.DataAccess;
 using TMS.DataAccess.Entities;
 
-namespace TMS.DataAccess.Configurations
+public partial class RolePermissionConfiguration : IEntityTypeConfiguration<RolePermissionEntity>
 {
-    public partial class RolePermissionConfiguration
-: IEntityTypeConfiguration<RolePermissionEntity>
+    private readonly AuthorizationOptions _authorizationOptions;
+
+    public RolePermissionConfiguration(AuthorizationOptions authorizationOptions)
     {
+        _authorizationOptions = authorizationOptions;
+    }
 
-        private readonly AuthorizationOptions _authorization;
+    public void Configure(EntityTypeBuilder<RolePermissionEntity> builder)
+    {
+        builder.HasKey(r => new { r.RoleId, r.PermissionId });
+        builder.HasData(ParseRolePermissions());
+    }
 
-
-        public RolePermissionConfiguration(AuthorizationOptions authorization)
-        {
-            _authorization = authorization;
-        }
-        public void Configure(EntityTypeBuilder<RolePermissionEntity> builder)
-        {
-            builder.HasKey(r => new
-            {
-                r.RoleId,
-                r.PermissionId
-            });
-
-            builder.HasData(ParseRolePermissions());
-
-        }
-        private RolePermissionEntity[] ParseRolePermissions()
-        {
-            return _authorization.RolePermissions
+    private RolePermissionEntity[] ParseRolePermissions()
+    {
+        return _authorizationOptions.RolePermissions
             .SelectMany(rp => rp.Permissions
                 .Select(p => new RolePermissionEntity
-            {
-                RoleId = (int)Enum.Parse<Role>(rp.Role),
-                PermissionId = (int)Enum.Parse<Permission>(p)
-            })).ToArray();
-        }
+                {
+                    RoleId = (int)Enum.Parse<Role>(rp.Role),
+                    PermissionId = (int)Enum.Parse<Permission>(p)
+                }))
+                .ToArray();
     }
 }

@@ -3,13 +3,13 @@
     public class Tsk
     {
         public const int MAX_TITLE_LENGTH = 250;
-        private Tsk(Guid id, string title, string description,
-            int assignedUserId, string priority,
+        private Tsk(Guid id, string title, string comment,
+            string assignedUserId, string priority,
             string status, DateTime startDate, DateTime endDate)
         {
             Id = id;
             Title = title;
-            Description = description;
+            Comment = comment;
             AssignedUserId = assignedUserId;
             Priority = priority;
             Status = status;
@@ -18,15 +18,15 @@
         }
         public Guid Id { get; }
         public string Title { get; } = string.Empty;
-        public string Description { get; } = string.Empty;
-        public int AssignedUserId { get; }
+        public string Comment { get; } = string.Empty;
+        public string AssignedUserId { get; }
         public string Priority { get; } = string.Empty;
         public string Status { get; } = string.Empty;
         public DateTime StartDate { get; }
         public DateTime EndDate { get; }
 
-        public static (Tsk Tsk, string Error) Create(Guid id, string title, string description,
-            int assignedUserId, string priority,
+        public static (Tsk Tsk, string Error) Create(Guid id, string title, string comment,
+            string assignedUserId, string priority,
             string status, DateTime startDate, DateTime endDate)
         {
             var error = string.Empty;
@@ -34,7 +34,7 @@
             {
                 error = "Title can't be empty or longer than 250 characters";
             }
-            var Tsk = new Tsk(id, title, description, assignedUserId, priority, status, startDate, endDate);
+            var Tsk = new Tsk(id, title, comment, assignedUserId, priority, status, startDate, endDate);
             return (Tsk, error);
         }
 

@@ -1,5 +1,4 @@
-﻿
-namespace TMS.DataAccess
+﻿namespace TMS.DataAccess
 {
     public class AuthorizationOptions
     {

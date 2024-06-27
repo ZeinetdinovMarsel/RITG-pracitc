@@ -12,7 +12,7 @@ using TMS.DataAccess;
 namespace TMS.DataAccess.Migrations
 {
     [DbContext(typeof(TMSDbContext))]
-    [Migration("20240626201606_init")]
+    [Migration("20240627154535_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -45,12 +45,12 @@ namespace TMS.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Read"
+                            Name = "Create"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Create"
+                            Name = "Read"
                         },
                         new
                         {
@@ -61,6 +61,40 @@ namespace TMS.DataAccess.Migrations
                         {
                             Id = 4,
                             Name = "Delete"
+                        });
+                });
+
+            modelBuilder.Entity("TMS.DataAccess.Entities.RoleEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Performer"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Manager"
                         });
                 });
 
@@ -77,6 +111,48 @@ namespace TMS.DataAccess.Migrations
                     b.HasIndex("PermissionId");
 
                     b.ToTable("RolePermissionEntity");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            PermissionId = 1
+                        },
+                        new
+                        {
+                            RoleId = 1,
+                            PermissionId = 2
+                        },
+                        new
+                        {
+                            RoleId = 1,
+                            PermissionId = 3
+                        },
+                        new
+                        {
+                            RoleId = 1,
+                            PermissionId = 4
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            PermissionId = 2
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            PermissionId = 1
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            PermissionId = 2
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            PermissionId = 3
+                        });
                 });
 
             modelBuilder.Entity("TMS.DataAccess.Entities.TskEntity", b =>
@@ -85,10 +161,11 @@ namespace TMS.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<int>("AssignedUserId")
-                        .HasColumnType("integer");
+                    b.Property<string>("AssignedUserId")
+                        .IsRequired()
+                        .HasColumnType("text");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Comment")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -154,40 +231,6 @@ namespace TMS.DataAccess.Migrations
                     b.ToTable("UserRoleEntity");
                 });
 
-            modelBuilder.Entity("TMS.DataAccess.RoleEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Admin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Performer"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Manager"
-                        });
-                });
-
             modelBuilder.Entity("TMS.DataAccess.Entities.RolePermissionEntity", b =>
                 {
                     b.HasOne("TMS.DataAccess.Entities.PermissionEntity", null)
@@ -196,7 +239,7 @@ namespace TMS.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TMS.DataAccess.RoleEntity", null)
+                    b.HasOne("TMS.DataAccess.Entities.RoleEntity", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -205,7 +248,7 @@ namespace TMS.DataAccess.Migrations
 
             modelBuilder.Entity("TMS.DataAccess.Entities.UserRoleEntity", b =>
                 {
-                    b.HasOne("TMS.DataAccess.RoleEntity", null)
+                    b.HasOne("TMS.DataAccess.Entities.RoleEntity", null)
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)

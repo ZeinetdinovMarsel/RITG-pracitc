@@ -1,5 +1,4 @@
-﻿using TMS.DataAccess;
-using TMS.Core.Models;
+﻿using TMS.Core.Models;
 using TMS.DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 using TMS.Core.Abstractions;
@@ -14,18 +13,19 @@ public class UsersRepository : IUsersRepository
         _context = context;
 
     }
-    public async Task Add(User user)
+    public async Task Add(User user, int role)
     {
         var roleEntity = await _context.Roles
-            .SingleOrDefaultAsync(r => r.Id == (int)Role.Manager)
-            ?? throw new InvalidOperationException();
+            .SingleOrDefaultAsync(r => r.Id == role)
+            ?? throw new InvalidOperationException("Role not found");
 
         var userEntity = new UserEntity()
         {
             Id = user.Id,
             UserName = user.UserName,
             PasswordHash = user.PasswordHash,
-            Email = user.Email
+            Email = user.Email,
+            Roles = [roleEntity]
         };
 
         await _context.Users.AddAsync(userEntity);
@@ -36,13 +36,31 @@ public class UsersRepository : IUsersRepository
     {
         var userEntity = await _context.Users
         .AsNoTracking()
-        .FirstOrDefaultAsync(u => u.Email == email) ?? throw new Exception();
+        .FirstOrDefaultAsync(u => u.Email == email);
+
+        if (userEntity == null) return null;
 
         User user = User.Create(userEntity.Id, userEntity.UserName, userEntity.PasswordHash, email);
 
         return user;
     }
+    public async Task<User> GetById(string Id)
+    {
 
+        if (!Guid.TryParse(Id, out Guid id))
+        {
+            throw new ArgumentException("Invalid Id format");
+        }
+        var userEntity = await _context.Users
+       .AsNoTracking()
+       .FirstOrDefaultAsync(u => u.Id == id);
+
+        if (userEntity == null) return null;
+
+        User user = User.Create(userEntity.Id, userEntity.UserName, userEntity.PasswordHash, userEntity.Email);
+
+        return user;
+    }
     public async Task<HashSet<Permission>> GetUserPermissions(Guid userId)
     {
         var roles = await _context.Users
@@ -58,5 +76,17 @@ public class UsersRepository : IUsersRepository
             .SelectMany(r => r.Permissions)
             .Select(p => (Permission)p.Id)
             .ToHashSet();
+    }
+    public async Task<List<User>> Get()
+    {
+        var userEntitites = await _context.Users
+            .AsNoTracking()
+            .ToListAsync();
+
+        var Users = userEntitites
+            .Select(u => User.Create(u.Id, u.UserName, u.PasswordHash, u.Email))
+            .ToList();
+
+        return Users;
     }
 }

@@ -1,6 +1,8 @@
 import Card from "antd/es/card/Card";
 import { CardTitle } from "./Cardtitle";
 import Button from "antd/es/button/button";
+import { useEffect, useState } from "react";
+import { getAllUsers } from "../services/tasks";
 
 interface Props {
     tasks: Task[];
@@ -26,6 +28,24 @@ const sortTasks = (tasks: Task[]) => {
 
 export const Tasks = ({ tasks, handleDelete, handleOpen }: Props) => {
     const sortedTasks = sortTasks(tasks);
+    const [users, setUsers] = useState<{ userId: string; name: string }[]>([]);
+    useEffect(() => {
+
+        const getUsers = async () => {
+            try {
+                const usersData = await getAllUsers();
+                
+                setUsers(usersData);
+
+            } catch (error) {
+                console.error("Error fetching users:", error);
+            }
+        };
+
+        getUsers();
+
+        
+    }, []);
 
     return (
         <div className="cards">
@@ -34,16 +54,19 @@ export const Tasks = ({ tasks, handleDelete, handleOpen }: Props) => {
                     key={task.id}
                     title={<CardTitle
                         title={task.title}
-                        description={task.description}
+                        description={task.comment}
                         assignedUserId={task.assignedUserId}
                         priority={task.priority}
                         status={task.status}
                         startDate={task.startDate}
-                        endDate={task.endDate} />}
+                        endDate={task.endDate} 
+                        users={users} 
+                        />}
                     bordered={false}
                 >
                      <p>Комментарий: </p>
-                    <p>{task.description}</p>
+                     <p style={{ maxWidth: 400, wordWrap: 'break-word' }}>{task.comment}</p>
+
                     <div className="card_buttons">
                         <Button
                             onClick={() => handleOpen(task)}

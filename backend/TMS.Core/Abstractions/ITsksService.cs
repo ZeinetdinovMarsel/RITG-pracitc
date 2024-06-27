@@ -10,8 +10,8 @@ namespace TMS.Core.Abstractions
         Task<Guid> UpdateTsk(
             Guid id, 
             string title, 
-            string description, 
-            int assignedUserId, 
+            string comment,
+            string assignedUserId, 
             string priority, 
             string status, 
             DateTime startDate, 

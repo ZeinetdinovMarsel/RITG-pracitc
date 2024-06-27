@@ -1,8 +1,8 @@
 interface Task{
     id: string;
     title: string;
-    description: string;
-    assignedUserId: number;
+    comment: string;
+    assignedUserId: string;
     priority: string;
     status: string
     startDate: Date;

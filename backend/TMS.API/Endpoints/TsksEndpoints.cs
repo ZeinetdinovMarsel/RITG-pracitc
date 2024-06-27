@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Microsoft.AspNetCore.Mvc;
 using TMS.API.Contracts;
-using TMS.Application.Services;
 using TMS.Core.Abstractions;
 using TMS.Core.Models;
-using Azure.Core;
 using TMS.API.Extentions;
 using TMS.Core.Enums;
 
@@ -19,7 +11,7 @@ namespace TMS.API.Endpoints
     {
         public static IEndpointRouteBuilder MapTsksEndpoints(this IEndpointRouteBuilder app)
         {
-            app.MapGet("tsks", GetTsks).RequirePermissions(Permission.Read);
+            app.MapGet("tsks", GetTsks);
             app.MapPost("tsks", CreateTsk).RequirePermissions(Permission.Create);
             app.MapPut("tsks/{id:guid}", UpdateTsk).RequirePermissions(Permission.Update);
             app.MapDelete("tsks/{id:guid}", DeleteTsk).RequirePermissions(Permission.Delete);
@@ -32,21 +24,20 @@ namespace TMS.API.Endpoints
         {
             var tsks = await tsksService.GetAllTsks();
 
-            var response = tsks.Select(t => new TsksResponse(t.Id, t.Title, t.Description, t.AssignedUserId, t.Priority, t.Status, t.StartDate, t.EndDate));
+            var response = tsks.Select(t => new TsksResponse(t.Id, t.Title, t.Comment, t.AssignedUserId, t.Priority, t.Status, t.StartDate, t.EndDate));
 
             return Results.Ok(response);
         }
 
         private static async Task<IResult> CreateTsk(
             [FromBody] TsksRequest request,
-            ITsksService tsksService,
-            HttpContext context)
+            ITsksService tsksService)
         {
 
             var (tsk, error) = Tsk.Create(
                 Guid.NewGuid(),
                 request.Title,
-                request.Description,
+                request.Comment,
                 request.AssignedUserId,
                 request.Priority,
                 request.Status,
@@ -64,23 +55,17 @@ namespace TMS.API.Endpoints
         private static async Task<IResult> UpdateTsk(
             [FromBody] TsksRequest request,
             ITsksService tsksService, 
-            Guid id,
-            HttpContext context)
+            Guid id)
         {
-            var tskId = await tsksService.UpdateTsk(id, request.Title, request.Description, request.AssignedUserId, request.Priority,
+            var tskId = await tsksService.UpdateTsk(id, request.Title, request.Comment, request.AssignedUserId, request.Priority,
                 request.Status, request.StartDate, request.EndDate);
             return Results.Ok(tskId);
         }
 
         private static async Task<IResult> DeleteTsk(
             ITsksService tsksService,
-            Guid id,
-            HttpContext context)
+            Guid id)
         {
-            if (!context.User.Identity.IsAuthenticated)
-            {
-                return Results.Unauthorized();
-            }
             return Results.Ok(await tsksService.DeleteTsk(id));
         }
     }

@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.DependencyInjection;
-using TMS.Infrastructure;
-using TMS.Core;
 using TMS.Application;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace TMS.Infrastructure
 {

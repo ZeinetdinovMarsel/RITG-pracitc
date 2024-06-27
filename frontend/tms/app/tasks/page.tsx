@@ -12,13 +12,17 @@ import {
 } from "../services/tasks";
 import Title from "antd/es/typography/Title"
 import { CreateUpdateTask, Mode } from "../components/CreateUpdateTask";
+import { message } from "antd";
 
-
+export interface User {
+    userId: string;
+    name: string;
+}
 export default function TasksPage() {
     const defaultValues = {
         title: "",
-        description: "",
-        assignedUserId: 0,
+        comment: "",
+        assignedUserId: "",
         priority: "",
         status: "Не начато",
         startDate: new Date,
@@ -30,39 +34,58 @@ export default function TasksPage() {
     const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [mode, setMode] = useState(Mode.Create);
-
+    const [error, setError] = useState<string | null>(null);
     useEffect(() => {
         const getTasks = async () => {
-            const tasks = await getAllTasks();
-            setLoading(false);
-            setTasks(tasks);
+            try {
+                const tasks = await getAllTasks();
+                setTasks(tasks);
+                setLoading(false);
+            } catch (error) {
+                setError(error.message);
+                setLoading(false);
+            }
         };
-        getTasks();
-    }, [])
+
+        getTasks();       
+    }, []);
 
     const handleCreateTask = async (request: TaskRequest) => {
-        await createTask(request);
-        closeModal();
-
-        const tasks = await getAllTasks();
-        setTasks(tasks);
+        try {
+            await createTask(request);
+            closeModal();
+            const tasks = await getAllTasks();
+            setTasks(tasks);
+            message.success(`Задача ${request.title} была создана`);
+        } catch (error) {
+            message.error(error.message);
+        }
     }
-
+    
     const handleUpdateTask = async (id: string, request: TaskRequest) => {
-        await updateTask(id, request);
-        closeModal();
-
-        const tasks = await getAllTasks();
-        setTasks(tasks);
+        try {
+            await updateTask(id, request);
+            closeModal();
+            const tasks = await getAllTasks();
+            setTasks(tasks);
+            message.success(`Задача ${request.title} была обновлена`);
+        } catch (error) {
+            message.error(error.message);
+        }
     }
-
+    
     const handleDeleteTask = async (id: string) => {
-        await deleteTask(id);
-        closeModal();
-
-        const tasks = await getAllTasks();
-        setTasks(tasks);
+        try {
+            await deleteTask(id);
+            closeModal();
+            const tasks = await getAllTasks();
+            setTasks(tasks);
+            message.success(`Задача была удалена`);
+        } catch (error) {
+            message.error(error.message);
+        }
     }
+    
 
     const openEditModal = (task: Task) => {
         setMode(Mode.Edit);
@@ -82,11 +105,18 @@ export default function TasksPage() {
 
     return (
         <div>
-            <Button 
-            type="primary"
-            style={{marginTop:"30px"}}
-            size="large"
-            onClick={openModal}>
+            {error && (
+                <div style={{ backgroundColor: 'red', color: 'white', padding: '10px', marginBottom: '10px' }}>
+                    {error}
+                </div>
+            )}
+
+            <Button
+                type="primary"
+                style={{ marginTop: "30px" }}
+                size="large"
+                onClick={openModal}
+            >
                 Добавить задачу
             </Button>
             <CreateUpdateTask

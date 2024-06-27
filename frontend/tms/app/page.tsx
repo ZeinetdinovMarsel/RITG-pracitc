@@ -1,8 +1,41 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  return (
-    <h1>Welcome to Tasks Management System</h1>
-  );
-}
+  const [name, setName] = useState('');
+
+    useEffect(() => {
+      async function fetchData() {
+        try {
+       
+           const response = await fetch("http://localhost:5183/user", {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            credentials: 'include'
+          });
+  
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          
+          
+          const content = await response.json();
+
+          console.log(content)
+          setName(content.userName);
+        } catch (error) {
+          console.error('Fetch error:', error);
+        }
+      }
+  
+      fetchData();
+    }, []);
+  
+    return (
+        <div>
+            <h1>{name ? 'Добро пожаловть ' + name : 'Вы не авторизованы'}</h1>
+        </div>
+    );
+};

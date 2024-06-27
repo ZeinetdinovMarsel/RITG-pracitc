@@ -3,8 +3,8 @@
     public record TsksResponse(
         Guid Id,
         string Title,
-        string Description,
-        int AssignedUserId,
+        string Comment,
+        string AssignedUserId,
         string Priority,
         string Status,
         DateTime StartDate,
@@ -12,8 +12,8 @@
     );
     public record TsksRequest(
         string Title,
-        string Description,
-        int AssignedUserId,
+        string Comment,
+        string AssignedUserId,
         string Priority,
         string Status,
         DateTime StartDate,

@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
-using System.Xml.Linq;
 using TMS.DataAccess.Entities;
 using TMS.Core.Enums;
 
@@ -13,11 +12,11 @@ namespace TMS.DataAccess.Configurations
 
         public void Configure(EntityTypeBuilder<PermissionEntity> builder)
         {
-            builder.HasKey(r => r.Id);
+            builder.HasKey(p => p.Id);
 
             var permissions = Enum
                 .GetValues<Permission>()
-                .Select(p => new RoleEntity
+                .Select(p => new PermissionEntity
                 {
                     Id = (int)p,
                     Name = p.ToString()

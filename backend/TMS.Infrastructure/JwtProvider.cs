@@ -2,34 +2,60 @@
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
+using System.Security.Claims;
 using TMS.Core.Abstractions;
 
-namespace TMS.Infrastructure;
-
-public class JwtProvider(IOptions<JwtOptions> options) : IJwtProvider
+namespace TMS.Infrastructure
 {
-    private readonly JwtOptions _options = options.Value;
-
-
-    public string GenerateToken(User user)
+    public class JwtProvider : IJwtProvider
     {
-        Claim[] claims = [
-            new(CustomClaims.UserId, user.Id.ToString())
-            ];
+        private readonly JwtOptions _options;
 
-        var signingCredentials = new SigningCredentials(
-        new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey)),
-        SecurityAlgorithms.HmacSha256);
+        public JwtProvider(IOptions<JwtOptions> options)
+        {
+            _options = options.Value;
+        }
 
-        var token = new JwtSecurityToken(
-        claims: claims,
-        signingCredentials: signingCredentials,
-        expires: DateTime.UtcNow.AddHours(_options.ExpiredHours));
+        public string GenerateToken(User user)
+        {
+            Claim[] claims = new[]
+            {
+                new Claim(CustomClaims.UserId, user.Id.ToString())
+            };
 
-        var tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
+            var signingCredentials = new SigningCredentials(
+                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_options.SecretKey)),
+                SecurityAlgorithms.HmacSha256);
 
-        return tokenValue;
+            var token = new JwtSecurityToken(
+                claims: claims,
+                signingCredentials: signingCredentials,
+                expires: DateTime.UtcNow.AddHours(_options.ExpiredHours));
+
+            var tokenValue = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return tokenValue;
+        }
+
+        public string ValidateToken(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_options.SecretKey);
+
+            tokenHandler.ValidateToken(token, new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ClockSkew = TimeSpan.Zero
+            }, out SecurityToken validatedToken);
+
+            var jwtToken = (JwtSecurityToken)validatedToken;
+            var userId = jwtToken.Claims.First(x => x.Type == CustomClaims.UserId).Value;
+
+            return userId;
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using TMS.Core.Models;
+﻿using TMS.Core.Models;
 using TMS.Core.Abstractions;
 
 namespace TMS.Application.Services
@@ -22,9 +21,9 @@ namespace TMS.Application.Services
             return await _tsksRepository.Create(tsk);
         }
 
-        public async Task<Guid> UpdateTsk(Guid id, string title, string description, int assignedUserId, string priority, string status, DateTime startDate, DateTime endDate)
+        public async Task<Guid> UpdateTsk(Guid id, string title, string comment, string assignedUserId, string priority, string status, DateTime startDate, DateTime endDate)
         {
-            return await _tsksRepository.Update(id, title, description, assignedUserId, priority, status, startDate, endDate);
+            return await _tsksRepository.Update(id, title, comment, assignedUserId, priority, status, startDate, endDate);
         }
 
         public async Task<Guid> DeleteTsk(Guid id)

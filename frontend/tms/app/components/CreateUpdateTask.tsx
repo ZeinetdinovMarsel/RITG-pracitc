@@ -6,6 +6,7 @@ import TextArea from "antd/es/input/TextArea";
 import Select from "antd/es/select";
 import { Option } from "antd/es/mentions";
 import { format } from 'date-fns';
+import { getAllUsers } from "../services/tasks";
 
 interface Props {
     mode: Mode;
@@ -30,16 +31,29 @@ export const CreateUpdateTask = ({
     handleUpdate,
 }: Props) => {
     const [title, setTitle] = useState<string>("");
-    const [description, setDescription] = useState<string>("");
-    const [assignedUserId, setAssignedUserId] = useState<number>(1);
+    const [comment, setComment] = useState<string>("");
+    const [assignedUserId, setAssignedUserId] = useState<string>("");
     const [priority, setPriority] = useState<string>("");
     const [status, setStatus] = useState<string>("");
     const [startDate, setStartDate] = useState<string>(format(new Date(), 'yyyy-MM-dd'));
     const [endDate, setEndDate] = useState<string>(format(new Date(), 'yyyy-MM-dd'));
+    const [users, setUsers] = useState<{ userId: string; name: string }[]>([]);
+
 
     useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const users = await getAllUsers();
+                setUsers(users);
+            } catch (error) {
+                console.error("Error fetching users:", error);
+            }
+        };
+
+        fetchUsers();
+        
         setTitle(values.title);
-        setDescription(values.description);
+        setComment(values.comment);
         setAssignedUserId(values.assignedUserId);
         setPriority(values.priority);
         setStatus(values.status);
@@ -50,7 +64,7 @@ export const CreateUpdateTask = ({
     const handleOnOk = async () => {
         const taskRequest = {
             title,
-            description,
+            comment,
             assignedUserId,
             priority,
             status,
@@ -78,16 +92,23 @@ export const CreateUpdateTask = ({
                     placeholder="Название"
                 />
                 <TextArea
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
                     autoSize={{ minRows: 3, maxRows: 3 }}
-                    placeholder="Описание"
+                    placeholder="Комментарий"
                 />
-                <Input
+                <Select
                     value={assignedUserId}
-                    onChange={(e) => setAssignedUserId(Number(e.target.value))}
+                    onChange={(value) => setAssignedUserId(value)}
                     placeholder="Id на ком задача"
-                />
+                    style={{ width: '100%', marginBottom: '16px' }}
+                >
+                    {users.map((user) => (
+                        <Option key={user.userId} value={user.userId}>
+                            {user.name}
+                        </Option>
+                    ))}
+                </Select>
                 <Select
                     value={priority}
                     onChange={(value) => setPriority(value)}

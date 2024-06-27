@@ -20,7 +20,7 @@ namespace TMS.DataAccess.Repositories
                 .ToListAsync();
 
             var Tsks = taskEntitites
-                .Select(t => Tsk.Create(t.Id, t.Title, t.Description,
+                .Select(t => Tsk.Create(t.Id, t.Title, t.Comment,
                 t.AssignedUserId, t.Priority, t.Status,
                 t.StartDate, t.EndDate).Tsk)
                 .ToList();
@@ -33,7 +33,7 @@ namespace TMS.DataAccess.Repositories
             {
                 Id = task.Id,
                 Title = task.Title,
-                Description = task.Description,
+                Comment = task.Comment,
                 AssignedUserId = task.AssignedUserId,
                 Priority = task.Priority,
                 Status = task.Status,
@@ -48,7 +48,7 @@ namespace TMS.DataAccess.Repositories
         }
 
         public async Task<Guid> Update(Guid id, string title,
-            string description, int assignedUserId,
+            string comment, string assignedUserId,
             string priority, string status,
             DateTime startDate, DateTime endDate)
         {
@@ -56,7 +56,7 @@ namespace TMS.DataAccess.Repositories
                 .Where(t => t.Id == id)
                 .ExecuteUpdateAsync(s => s
                     .SetProperty(t => t.Title, t => title)
-                    .SetProperty(t => t.Description, t => description)
+                    .SetProperty(t => t.Comment, t => comment)
                     .SetProperty(t => t.AssignedUserId, t => assignedUserId)
                     .SetProperty(t => t.Priority, t => priority)
                     .SetProperty(t => t.Status, t => status)

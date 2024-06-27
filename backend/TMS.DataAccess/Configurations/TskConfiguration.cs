@@ -15,7 +15,7 @@ namespace TMS.DataAccess.Configurations.Core
             .HasMaxLength(Tsk.MAX_TITLE_LENGTH)
             .IsRequired();
 
-            builder.Property(b => b.Description)
+            builder.Property(b => b.Comment)
             .IsRequired();
 
             builder.Property(b => b.AssignedUserId)

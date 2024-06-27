@@ -46,8 +46,8 @@ namespace TMS.DataAccess.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Title = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false),
-                    AssignedUserId = table.Column<int>(type: "integer", nullable: false),
+                    Comment = table.Column<string>(type: "text", nullable: false),
+                    AssignedUserId = table.Column<string>(type: "text", nullable: false),
                     Priority = table.Column<string>(type: "text", nullable: false),
                     Status = table.Column<string>(type: "text", nullable: false),
                     StartDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
@@ -125,8 +125,8 @@ namespace TMS.DataAccess.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Read" },
-                    { 2, "Create" },
+                    { 1, "Create" },
+                    { 2, "Read" },
                     { 3, "Update" },
                     { 4, "Delete" }
                 });
@@ -139,6 +139,21 @@ namespace TMS.DataAccess.Migrations
                     { 1, "Admin" },
                     { 2, "Performer" },
                     { 3, "Manager" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "RolePermissionEntity",
+                columns: new[] { "PermissionId", "RoleId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 2, 1 },
+                    { 3, 1 },
+                    { 4, 1 },
+                    { 2, 2 },
+                    { 1, 3 },
+                    { 2, 3 },
+                    { 3, 3 }
                 });
 
             migrationBuilder.CreateIndex(

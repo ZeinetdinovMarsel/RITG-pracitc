@@ -1,13 +1,15 @@
-
-import "./globals.css";
-import Layout, {Header, Content, Footer} from "antd/es/layout/layout";
-import {Menu} from "antd";
+"use client";
+import React, { useEffect, useState } from "react";
+import Layout, { Header, Content, Footer } from "antd/es/layout/layout";
+import { Menu } from "antd";
 import Link from "next/link";
+import "./globals.css";
+
+import { useRouter } from "next/navigation";
 
 const items = [
   { key: "Home", label: <Link href={"/"}>Главная</Link> },
   { key: "Tasks", label: <Link href={"/tasks"}>Задачи</Link> },
-  { key: "Auth", label: <Link href={"/auth"}>Авторизация/Регистрация</Link> }
 ];
 
 export default function RootLayout({
@@ -15,6 +17,54 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [name, setName] = useState('');
+  const router = useRouter();
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch("http://localhost:5183/user", {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include'
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const content = await response.json();
+        setName(content.userName);
+        
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  const isAuthenticated = !!name;
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("http://localhost:5183/logout", {
+        method: 'POST',
+        credentials: 'include'
+      });
+
+      if (!response.ok) {
+        throw new Error('Logout request failed');
+        
+      }
+      window.location.reload();
+      setName('');
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  };
+
   return (
     <html lang="en">
       <body>
@@ -23,19 +73,28 @@ export default function RootLayout({
             <Menu
               theme="dark"
               mode="horizontal"
-              items={items}
               style={{ flex: 1, minWidth: 0 }}
-            />
+            >
+              {items.map(item => (
+                <Menu.Item key={item.key}>{item.label}</Menu.Item>
+              ))}
+              {isAuthenticated ? (
+                <Menu.Item key="Logout" onClick={handleLogout}>
+                  Выход
+                </Menu.Item>
+              ) : (
+                <Menu.Item key="Auth">
+                  <Link href={"/login"}>Авторизация</Link>
+                </Menu.Item>
+              )}
+            </Menu>
           </Header>
           <Content style={{ padding: "0 48px" }}>{children}</Content>
           <Footer style={{ textAlign: "center" }}>
             Прототип Task Management System 2024 Зейнетдинова Марселя
           </Footer>
-
         </Layout>
       </body>
     </html>
   );
 }
-
-
