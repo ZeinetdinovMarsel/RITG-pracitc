@@ -3,8 +3,9 @@ interface Task{
     title: string;
     comment: string;
     assignedUserId: string;
+    creatorId: string;
     priority: string;
-    status: string
+    status: number
     startDate: Date;
     endDate: Date;
 }

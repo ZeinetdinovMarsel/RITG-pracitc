@@ -11,14 +11,17 @@ namespace TMS.DataAccess.Configurations.Core
         {
             builder.HasKey(x => x.Id);
 
+            builder.Property(b => b.CreatorId)
+            .IsRequired();
+
+            builder.Property(b => b.AssignedUserId)
+            .IsRequired();
+
             builder.Property(b => b.Title)
             .HasMaxLength(Tsk.MAX_TITLE_LENGTH)
             .IsRequired();
 
             builder.Property(b => b.Comment)
-            .IsRequired();
-
-            builder.Property(b => b.AssignedUserId)
             .IsRequired();
 
             builder.Property(b => b.Priority)

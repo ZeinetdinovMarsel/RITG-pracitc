@@ -45,11 +45,12 @@ namespace TMS.DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Title = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
+                    CreatorId = table.Column<Guid>(type: "uuid", nullable: false),
+                    AssignedUserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    Title = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Comment = table.Column<string>(type: "text", nullable: false),
-                    AssignedUserId = table.Column<string>(type: "text", nullable: false),
                     Priority = table.Column<string>(type: "text", nullable: false),
-                    Status = table.Column<string>(type: "text", nullable: false),
+                    Status = table.Column<int>(type: "integer", nullable: false),
                     StartDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     EndDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
@@ -128,7 +129,8 @@ namespace TMS.DataAccess.Migrations
                     { 1, "Create" },
                     { 2, "Read" },
                     { 3, "Update" },
-                    { 4, "Delete" }
+                    { 4, "Delete" },
+                    { 5, "Change" }
                 });
 
             migrationBuilder.InsertData(
@@ -151,6 +153,7 @@ namespace TMS.DataAccess.Migrations
                     { 3, 1 },
                     { 4, 1 },
                     { 2, 2 },
+                    { 5, 2 },
                     { 1, 3 },
                     { 2, 3 },
                     { 3, 3 }

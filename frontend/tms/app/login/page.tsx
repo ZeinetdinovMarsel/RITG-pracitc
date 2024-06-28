@@ -20,8 +20,8 @@ export default function Login() {
   const handleLogin = async (request: LoginRequest) => {
     const success = await login(request);
     if (success) {
-      window.location.reload();
       router.push('/');
+      window.location.reload();
     } else {
 
     }

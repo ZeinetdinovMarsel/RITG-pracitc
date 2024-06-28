@@ -2,20 +2,21 @@
 {
     public record TsksResponse(
         Guid Id,
+        Guid CreatorId,
+        Guid AssignedUserId,
         string Title,
         string Comment,
-        string AssignedUserId,
         string Priority,
-        string Status,
+        int Status,
         DateTime StartDate,
         DateTime EndDate
     );
     public record TsksRequest(
+        Guid AssignedUserId,
         string Title,
         string Comment,
-        string AssignedUserId,
         string Priority,
-        string Status,
+        int Status,
         DateTime StartDate,
         DateTime EndDate
     );

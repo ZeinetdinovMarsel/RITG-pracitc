@@ -6,7 +6,9 @@ namespace TMS.Core.Abstractions
     {
         Task<Guid> Create(Tsk task);
         Task<Guid> Delete(Guid id);
-        Task<List<Tsk>> Get();
-        Task<Guid> Update(Guid id, string title, string comment, string assignedUserId, string priority, string status, DateTime startDate, DateTime endDate);
+        Task<List<Tsk>> GetAll(Guid id);
+        Task<(Tsk,string)> Get(Guid id);
+        Task<Guid> Update(Guid id, Tsk task);
+        Task<Guid> ChangeStat(Guid id, Tsk tsk);
     }
 }

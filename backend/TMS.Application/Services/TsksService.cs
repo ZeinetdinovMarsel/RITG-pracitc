@@ -11,9 +11,13 @@ namespace TMS.Application.Services
             _tsksRepository = tsksRepository;
         }
 
-        public async Task<List<Tsk>> GetAllTsks()
+        public async Task<(Tsk,string)> GetTskById(Guid id)
         {
-            return await _tsksRepository.Get();
+            return await _tsksRepository.Get(id);
+        }
+        public async Task<List<Tsk>> GetAllTsksById(Guid id)
+        {
+            return await _tsksRepository.GetAll(id);
         }
 
         public async Task<Guid> CreateTsk(Tsk tsk)
@@ -21,9 +25,14 @@ namespace TMS.Application.Services
             return await _tsksRepository.Create(tsk);
         }
 
-        public async Task<Guid> UpdateTsk(Guid id, string title, string comment, string assignedUserId, string priority, string status, DateTime startDate, DateTime endDate)
+        public async Task<Guid> UpdateTsk(Guid id, Tsk tsk)
         {
-            return await _tsksRepository.Update(id, title, comment, assignedUserId, priority, status, startDate, endDate);
+            return await _tsksRepository.Update(id, tsk);
+        }
+
+        public async Task<Guid> ChangeTskStat(Guid id, Tsk tsk)
+        {
+            return await _tsksRepository.ChangeStat(id, tsk);
         }
 
         public async Task<Guid> DeleteTsk(Guid id)

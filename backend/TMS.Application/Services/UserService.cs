@@ -1,4 +1,5 @@
 ﻿using TMS.Core.Abstractions;
+using TMS.Core.Enums;
 using TMS.Core.Models;
 
 namespace TMS.Application.Services;
@@ -60,15 +61,20 @@ public class UsersService : IUsersService
     }
     public async Task<User> GetUserFromToken(string token)
     {
-        string userId = _jwtProvider.ValidateToken(token);
+        Guid userId = _jwtProvider.ValidateToken(token);
 
-        var user = await  _usersRepository.GetById(userId);
+        var user = await _usersRepository.GetById(userId);
 
         return user;
     }
 
-    public async Task<List<User>> GetAllUsers()
+    public async Task<List<User>> GetAllUsersByRole(int role)
     {
-        return await _usersRepository.Get();
+        return await _usersRepository.GetUsersByRole(role);
+    }
+
+    public async Task<Role> GetUserRole(Guid id)
+    {
+        return (await _usersRepository.GetUserRoles(id))[0];
     }
 }

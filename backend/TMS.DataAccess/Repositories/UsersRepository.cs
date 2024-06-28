@@ -44,16 +44,12 @@ public class UsersRepository : IUsersRepository
 
         return user;
     }
-    public async Task<User> GetById(string Id)
+    public async Task<User> GetById(Guid Id)
     {
 
-        if (!Guid.TryParse(Id, out Guid id))
-        {
-            throw new ArgumentException("Invalid Id format");
-        }
         var userEntity = await _context.Users
        .AsNoTracking()
-       .FirstOrDefaultAsync(u => u.Id == id);
+       .FirstOrDefaultAsync(u => u.Id == Id);
 
         if (userEntity == null) return null;
 
@@ -77,16 +73,30 @@ public class UsersRepository : IUsersRepository
             .Select(p => (Permission)p.Id)
             .ToHashSet();
     }
-    public async Task<List<User>> Get()
+    public async Task<List<User>> GetUsersByRole(int role)
     {
         var userEntitites = await _context.Users
             .AsNoTracking()
+            .Where(u => u.Roles.Any(r => r.Id == role))
             .ToListAsync();
 
         var Users = userEntitites
-            .Select(u => User.Create(u.Id, u.UserName, u.PasswordHash, u.Email))
-            .ToList();
+                .Select(u => User.Create(u.Id, u.UserName, u.PasswordHash, u.Email))
+                .ToList();
 
         return Users;
+    }
+
+    public async Task<List<Role>> GetUserRoles(Guid userId)
+    {
+        var userRoles = await _context.Users
+            .AsNoTracking()
+            .Include(u => u.Roles)
+            .Where(u => u.Id == userId)
+            .SelectMany(u => u.Roles)
+            .Select(r => Enum.Parse<Role>(r.Name))
+            .ToListAsync();
+
+        return userRoles;
     }
 }

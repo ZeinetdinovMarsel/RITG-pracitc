@@ -38,7 +38,7 @@ namespace TMS.Infrastructure
             return tokenValue;
         }
 
-        public string ValidateToken(string token)
+        public Guid ValidateToken(string token)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(_options.SecretKey);
@@ -54,8 +54,11 @@ namespace TMS.Infrastructure
 
             var jwtToken = (JwtSecurityToken)validatedToken;
             var userId = jwtToken.Claims.First(x => x.Type == CustomClaims.UserId).Value;
-
-            return userId;
+            if (!Guid.TryParse(userId, out Guid id))
+            {
+                throw new ArgumentException("Invalid Id format");
+            }
+            return id;
         }
     }
 }

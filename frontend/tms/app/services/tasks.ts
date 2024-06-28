@@ -8,15 +8,25 @@ export interface TaskRequest {
     startDate: Date;
     endDate: Date;
 }
-export const getAllUsers = async () => {
-    const response = await fetch("http://localhost:5183/users",
-    );
-    await checkResponse(response);
+export const getUsersbyRole = async (roleId) => {
+    const url = `http://localhost:5183/users?roleId=${roleId}`;
+
+    const response = await fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
     return response.json();
 }
 
 export const getAllTasks = async () => {
-    const response = await fetch("http://localhost:5183/tsks",
+    const response = await fetch("http://localhost:5183/tsks", {
+        credentials: 'include'
+    },
     );
     await checkResponse(response);
     return response.json();
@@ -24,7 +34,7 @@ export const getAllTasks = async () => {
 
 export const createTask = async (taskrequest: TaskRequest) => {
 
-  
+
 
     const response = await fetch("http://localhost:5183/tsks", {
         method: "POST",
@@ -49,6 +59,17 @@ export const updateTask = async (id: string, taskrequest: TaskRequest) => {
     await checkResponse(response);
 }
 
+export const changeStateTask = async (id: string) => {
+    const response = await fetch(`http://localhost:5183/tsks/status/change/${id}`, {
+        method: "PUT",
+        headers: {
+            "content-type": "application/json",
+        },
+        credentials: 'include',
+    });
+    await checkResponse(response);
+}
+
 export const deleteTask = async (id: string) => {
     const response = await fetch(`http://localhost:5183/tsks/${id}`, {
         method: "DELETE",
@@ -58,11 +79,12 @@ export const deleteTask = async (id: string) => {
 }
 
 const checkResponse = async (response: Response) => {
+
     switch (response.status) {
         case 200:
-            return;            
+            return;
         case 400:
-            throw new Error("Неверный запрос.");
+            throw new Error(`${await response.json()}`);
         case 401:
             throw new Error("Вы не авторизованы для выполнения этого действия.");
         case 403:

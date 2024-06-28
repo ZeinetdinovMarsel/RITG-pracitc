@@ -29,3 +29,14 @@ export const login = async (loginRequest: LoginRequest): Promise<boolean> => {
         return false;
     }
 };
+export const getUserRole = async () => {
+    try {
+        const response = await fetch("http://localhost:5183/user/role", {
+            credentials: 'include'
+        },
+        );
+        return await response.json();
+    } catch (error) {
+        return error.message;
+    }
+}

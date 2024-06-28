@@ -4,6 +4,7 @@ using TMS.Core.Abstractions;
 using TMS.Core.Models;
 using TMS.API.Extentions;
 using TMS.Core.Enums;
+using TMS.Application.Services;
 
 namespace TMS.API.Endpoints
 {
@@ -11,34 +12,56 @@ namespace TMS.API.Endpoints
     {
         public static IEndpointRouteBuilder MapTsksEndpoints(this IEndpointRouteBuilder app)
         {
-            app.MapGet("tsks", GetTsks);
+            app.MapGet("tsks", GetTsksByUser).RequirePermissions(Permission.Read);
             app.MapPost("tsks", CreateTsk).RequirePermissions(Permission.Create);
             app.MapPut("tsks/{id:guid}", UpdateTsk).RequirePermissions(Permission.Update);
             app.MapDelete("tsks/{id:guid}", DeleteTsk).RequirePermissions(Permission.Delete);
-
+            app.MapPut("tsks/status/change/{id:guid}", StatusChangeTsk).RequirePermissions(Permission.Change);
             return app;
         }
 
-        private static async Task<IResult> GetTsks(
-            ITsksService tsksService)
+        private static async Task<IResult> GetTsksByUser(
+            ITsksService tsksService,
+            UsersService usersService,
+            HttpContext context)
         {
-            var tsks = await tsksService.GetAllTsks();
+            var token = context.Request.Cookies["jwt"];
 
-            var response = tsks.Select(t => new TsksResponse(t.Id, t.Title, t.Comment, t.AssignedUserId, t.Priority, t.Status, t.StartDate, t.EndDate));
+            var user = await usersService.GetUserFromToken(token);
+
+            var tsks = await tsksService.GetAllTsksById(user.Id);
+
+            var response = tsks.Select(t => new TsksResponse(
+                t.Id,
+                t.CreatorId,
+                t.AssignedUserId,
+                t.Title, 
+                t.Comment, 
+                t.Priority, 
+                t.Status, 
+                t.StartDate, 
+                t.EndDate));
 
             return Results.Ok(response);
         }
 
         private static async Task<IResult> CreateTsk(
             [FromBody] TsksRequest request,
-            ITsksService tsksService)
+            ITsksService tsksService,
+            UsersService usersService,
+            HttpContext context)
         {
+
+            var token = context.Request.Cookies["jwt"];
+
+            var user = await usersService.GetUserFromToken(token);
 
             var (tsk, error) = Tsk.Create(
                 Guid.NewGuid(),
+                user.Id,
+                request.AssignedUserId,
                 request.Title,
                 request.Comment,
-                request.AssignedUserId,
                 request.Priority,
                 request.Status,
                 request.StartDate,
@@ -55,10 +78,31 @@ namespace TMS.API.Endpoints
         private static async Task<IResult> UpdateTsk(
             [FromBody] TsksRequest request,
             ITsksService tsksService, 
-            Guid id)
+            Guid id,
+            UsersService usersService,
+            HttpContext context)
         {
-            var tskId = await tsksService.UpdateTsk(id, request.Title, request.Comment, request.AssignedUserId, request.Priority,
-                request.Status, request.StartDate, request.EndDate);
+
+            var token = context.Request.Cookies["jwt"];
+
+            var user = await usersService.GetUserFromToken(token);
+
+            var (tsk, error) = Tsk.Create(
+                id,
+                user.Id,
+                request.AssignedUserId,
+                request.Title,
+                request.Comment,
+                request.Priority,
+                request.Status,
+                request.StartDate,
+                request.EndDate);
+
+
+            if (!string.IsNullOrEmpty(error))
+                return Results.BadRequest(error);
+
+            var tskId = await tsksService.UpdateTsk(id, tsk);
             return Results.Ok(tskId);
         }
 
@@ -67,6 +111,26 @@ namespace TMS.API.Endpoints
             Guid id)
         {
             return Results.Ok(await tsksService.DeleteTsk(id));
+        }
+
+        private static async Task<IResult> StatusChangeTsk(
+            ITsksService tsksService,
+            Guid id,
+            UsersService usersService,
+            HttpContext context)
+        {
+
+            var token = context.Request.Cookies["jwt"];
+
+            var user = await usersService.GetUserFromToken(token);
+
+            var (tsk, error) = await tsksService.GetTskById(id);
+
+            if (!string.IsNullOrEmpty(error))
+                return Results.BadRequest(error);
+
+            var tskId = await tsksService.ChangeTskStat(id, tsk);
+            return Results.Ok(tskId);
         }
     }
 }

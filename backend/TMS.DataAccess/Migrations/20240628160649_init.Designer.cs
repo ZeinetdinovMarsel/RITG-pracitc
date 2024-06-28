@@ -12,7 +12,7 @@ using TMS.DataAccess;
 namespace TMS.DataAccess.Migrations
 {
     [DbContext(typeof(TMSDbContext))]
-    [Migration("20240627154535_init")]
+    [Migration("20240628160649_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -61,6 +61,11 @@ namespace TMS.DataAccess.Migrations
                         {
                             Id = 4,
                             Name = "Delete"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Change"
                         });
                 });
 
@@ -140,6 +145,11 @@ namespace TMS.DataAccess.Migrations
                         },
                         new
                         {
+                            RoleId = 2,
+                            PermissionId = 5
+                        },
+                        new
+                        {
                             RoleId = 3,
                             PermissionId = 1
                         },
@@ -161,13 +171,15 @@ namespace TMS.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("AssignedUserId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<Guid>("AssignedUserId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Comment")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<Guid>("CreatorId")
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("timestamp with time zone");
@@ -179,14 +191,13 @@ namespace TMS.DataAccess.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(250)
-                        .HasColumnType("character varying(250)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("Id");
 

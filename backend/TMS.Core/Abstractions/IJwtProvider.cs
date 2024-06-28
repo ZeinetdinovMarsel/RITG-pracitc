@@ -5,6 +5,6 @@ namespace TMS.Core.Abstractions
     public interface IJwtProvider
     {
         string GenerateToken(User user);
-        string ValidateToken(string token);
+        Guid ValidateToken(string token);
     }
 }

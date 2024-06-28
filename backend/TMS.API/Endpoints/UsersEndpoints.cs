@@ -1,4 +1,6 @@
-﻿using TMS.API.Contracts;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
+using TMS.API.Contracts;
 using TMS.Application.Services;
 
 namespace TMS.API.Endpoints
@@ -16,7 +18,9 @@ namespace TMS.API.Endpoints
 
             app.MapGet("user", GetUserDetails);
 
-            app.MapGet("users", GetAllUsers);
+            app.MapGet("users", GetUsersByRole);
+
+            app.MapGet("user/role", GetUserRole);
             return app;
         }
         private static async Task<IResult> Register(
@@ -93,14 +97,30 @@ namespace TMS.API.Endpoints
             }
         }
 
-        private static async Task<IResult> GetAllUsers(
-          UsersService usersService)
+        private static async Task<IResult> GetUsersByRole(
+          int roleId,
+           UsersService usersService
+          
+          )
         {
-            var users = await usersService.GetAllUsers();
+            var users = await usersService.GetAllUsersByRole(roleId);
 
             var response = users.Select(u => new UsersRequest(u.Id,u.UserName));
 
             return Results.Ok(response);
+        }
+
+        private static async Task<IResult> GetUserRole(
+          UsersService usersService,
+            HttpContext context)
+        {
+            var token = context.Request.Cookies["jwt"];
+
+            var user = await usersService.GetUserFromToken(token);
+
+            var role = await usersService.GetUserRole(user.Id);
+
+            return Results.Ok(role);
         }
     }
 }
