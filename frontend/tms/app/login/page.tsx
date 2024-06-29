@@ -17,10 +17,48 @@ export default function Login() {
 
   const [values, setValues] = useState<Login>(defaultValues);
   const router = useRouter();
+
+  const [name, setName] = useState('');
+  useEffect(() => {
+    async function fetchData() {
+      try {
+     
+         const response = await fetch("http://localhost:5183/user", {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include'
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        
+        
+        const content = await response.json();
+
+        console.log(content)
+        setName(content.userName);
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  const isAuthenticated = !!name;
+
+  if(isAuthenticated){
+    router.push('/');
+  }
+  
   const handleLogin = async (request: LoginRequest) => {
     const success = await login(request);
     if (success) {
       router.push('/');
+
       window.location.reload();
     } else {
 

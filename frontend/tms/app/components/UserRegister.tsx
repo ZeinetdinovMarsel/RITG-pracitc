@@ -16,7 +16,7 @@ export const UserRegister = ({
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [confirmPassword, setConfirmPassword] = useState<string>('');
-    const [role, setRole] = useState<number>(1); 
+    const [role, setRole] = useState<number>(2); 
 
     const onFinish = () => {
         if (password !== confirmPassword) {
@@ -37,7 +37,6 @@ export const UserRegister = ({
         <Form onFinish={onFinish} layout="vertical">
             <Form.Item label="Имя" name="name" initialValue={userName}>
                 <Input
-                    value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Имя"
                 />
@@ -45,28 +44,24 @@ export const UserRegister = ({
             <Form.Item label="Почта" name="email" initialValue={email}>
                 <Input
                     type="email"
-                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Почта"
                 />
             </Form.Item>
             <Form.Item label="Пароль" name="password" initialValue={password}>
                 <Input.Password
-                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Пароль"
                 />
             </Form.Item>
             <Form.Item label="Подтверждение пароля" name="confirmPassword" initialValue={confirmPassword}>
                 <Input.Password
-                    value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     placeholder="Подтвердите пароль"
                 />
             </Form.Item>
             <Form.Item label="Роль" name="role" initialValue={role}>
-                <Select onChange={(value) => setRole(value)} defaultValue="1">
-                    <Option value={1}>Админ</Option>
+                <Select onChange={(value) => setRole(value)} defaultValue="2">
                     <Option value={2}>Исполнитель</Option>
                     <Option value={3}>Менеджер</Option>
                 </Select>

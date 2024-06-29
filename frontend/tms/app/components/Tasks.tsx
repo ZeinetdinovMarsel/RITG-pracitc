@@ -12,24 +12,19 @@ interface Props {
     handleOpen: (task: Task) => void;
     handleAccept: (id: string) => void
     userRole: Role;
+    showHistory: (id: string) => void
 }
-
-const priorityOrder: Record<string, number> = {
-    "Низкий": 1,
-    "Средний": 2,
-    "Высокий": 3
-};
 
 const sortTasks = (tasks: Task[]) => {
     return tasks.sort((a, b) => {
-        const priorityComparison = priorityOrder[b.priority] - priorityOrder[a.priority];
+        const priorityComparison = b.priority - a.priority;
         if (priorityComparison !== 0) return priorityComparison;
 
         return new Date(a.endDate).getTime() - new Date(b.endDate).getTime();
     });
 };
 
-export const Tasks = ({ tasks, handleDelete, handleOpen, handleAccept, userRole }: Props) => {
+export const Tasks = ({ tasks, handleDelete, handleOpen, handleAccept, userRole,showHistory }: Props) => {
     const sortedTasks = sortTasks(tasks);
     const [users, setUsers] = useState<{ userId: string; name: string }[]>([]);
 
@@ -41,7 +36,7 @@ export const Tasks = ({ tasks, handleDelete, handleOpen, handleAccept, userRole 
                 const usersData = [...usersDataPerformer, ...usersDataManager];
                 setUsers(usersData);
             } catch (error) {
-                console.error("Error fetching users:", error);
+                console.error("Неизвестная ошибка:", error);
             }
         };
 
@@ -110,6 +105,7 @@ export const Tasks = ({ tasks, handleDelete, handleOpen, handleAccept, userRole 
                                 </Button>
                             ) : null
                         )}
+                        <Button onClick={() => showHistory(task.id)}>История изменений</Button>
                     </div>
                 </Card>
             ))}

@@ -30,12 +30,13 @@ namespace TMS.API.Endpoints
 
             try
             {
-                await usersService.Register(
+                
+                var userId = await usersService.Register(
                     request.UserName,
                     request.Email,
                     request.Password,
                     request.Role);
-                return Results.Ok();
+                return Results.Ok(userId);
             }
             catch (InvalidOperationException ex)
             {

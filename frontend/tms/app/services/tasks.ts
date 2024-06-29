@@ -3,8 +3,8 @@ export interface TaskRequest {
     title: string;
     comment: string;
     assignedUserId: string;
-    priority: string;
-    status: string
+    priority: number;
+    status: string;
     startDate: Date;
     endDate: Date;
 }
@@ -77,6 +77,19 @@ export const deleteTask = async (id: string) => {
     });
     await checkResponse(response);
 }
+
+export const getTaskHistoryById = async (id: string) => {
+    const url = `http://localhost:5183/tsks/history?id=${id}`;
+
+    const response = await fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+    });
+
+    await checkResponse(response);
+    
+    return response.json();
+};
 
 const checkResponse = async (response: Response) => {
 

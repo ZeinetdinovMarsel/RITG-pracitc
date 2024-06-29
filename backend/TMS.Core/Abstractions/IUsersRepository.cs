@@ -9,6 +9,7 @@ namespace TMS.Core.Abstractions
         Task<User> GetByEmail(string email);
         Task<User> GetById(Guid Id);
         Task<List<User>> GetUsersByRole(int role);
+        Task<List<User>> GetUsers();
         Task<HashSet<Permission>> GetUserPermissions(Guid userId);
         Task<List<Role>> GetUserRoles(Guid userId);
     }

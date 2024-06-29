@@ -8,6 +8,7 @@ import {
     createTask,
     deleteTask,
     getAllTasks,
+    getTaskHistoryById,
     updateTask
 } from "../services/tasks";
 import Title from "antd/es/typography/Title";
@@ -15,6 +16,8 @@ import { CreateUpdateTask, Mode } from "../components/CreateUpdateTask";
 import { message, Modal } from "antd";
 import { Role } from "../enums/Role";
 import { getUserRole } from "../services/login";
+import TaskHistoryModal from "../components/TaskHistoryModal";
+import { useRouter } from "next/navigation";
 
 export interface User {
     userId: string;
@@ -26,7 +29,7 @@ export default function TasksPage() {
         title: "",
         comment: "",
         assignedUserId: "",
-        priority: "",
+        priority: 1,
         status: 1,
         startDate: new Date(),
         endDate: new Date()
@@ -40,7 +43,10 @@ export default function TasksPage() {
     const [taskToDelete, setTaskToDelete] = useState<string | null>(null);
     const [mode, setMode] = useState(Mode.Create);
     const [userRole, setUserRole] = useState<Role>(1);
-
+    const [taskHistory, setTaskHistory] = useState<any[]>([]);
+    const [historyModalVisible, setHistoryModalVisible] = useState(false);
+    const [selectedTaskId, setSelectedTaskId] = useState<string | null>(null);
+    const router = useRouter();
     useEffect(() => {
         const getTasks = async () => {
             try {
@@ -52,12 +58,33 @@ export default function TasksPage() {
             } catch (error) {
                 message.error(error.message);
                 setLoading(false);
+
+                router.push('/login');
             }
         };
 
         getTasks();
     }, []);
+    const fetchTaskHistory = async (taskId: string) => {
+        try {
+            const history = await getTaskHistoryById(taskId);
+            setTaskHistory(history);
+        } catch (error) {
+            message.error(error.message);
+        }
+    };
 
+
+    const handleShowHistory = (taskId: string) => {
+        setHistoryModalVisible(true);
+        setSelectedTaskId(taskId);
+        fetchTaskHistory(taskId);
+    };
+
+    const handleCloseHistoryModal = () => {
+        setHistoryModalVisible(false);
+        setTaskHistory([]);
+    };
     const handleCreateTask = async (request: TaskRequest) => {
         try {
             await createTask(request);
@@ -166,6 +193,7 @@ export default function TasksPage() {
                     handleDelete={handleDeleteTask}
                     handleAccept={handleAcceptTask}
                     userRole={userRole}
+                    showHistory={handleShowHistory}
                 />
             )}
 
@@ -179,6 +207,12 @@ export default function TasksPage() {
             >
                 <p>Вы уверены, что хотите удалить эту задачу?</p>
             </Modal>
+
+            <TaskHistoryModal
+                visible={historyModalVisible}
+                onClose={handleCloseHistoryModal}
+                taskHistory={taskHistory}
+            />
         </div>
     );
 };

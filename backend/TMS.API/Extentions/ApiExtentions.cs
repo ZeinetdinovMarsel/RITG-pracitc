@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using TMS.API.Endpoints;
 using TMS.Application;
+using TMS.Core.Abstractions;
 using TMS.Core.Enums;
 using TMS.Infrastructure;
 namespace TMS.API.Extentions
@@ -16,6 +17,7 @@ namespace TMS.API.Extentions
         {
             app.MapTsksEndpoints();
             app.MapUsersEndpoints();
+            app.MapAdminEndpoints();
         }
 
         public static void AddApiAuthentification(
@@ -47,7 +49,9 @@ namespace TMS.API.Extentions
 
             services.AddScoped<IPermissionService, PermissionService>();
             services.AddSingleton<IAuthorizationHandler, PermissionAuthorizationHandler>();
-            
+
+            services.AddScoped<IRoleService, RoleService>();
+            services.AddSingleton<IAuthorizationHandler, RoleAuthorizationHandler>();
             services.AddAuthorization();
         }
 
@@ -57,6 +61,14 @@ namespace TMS.API.Extentions
         {
             return builder.RequireAuthorization(policy =>
             policy.AddRequirements(new PermissionRequirement(permissions)));
+        }
+
+        public static IEndpointConventionBuilder RequireRoles<TBuilder>(
+            this TBuilder builder, params Role[] roles)
+            where TBuilder : IEndpointConventionBuilder
+        {
+            return builder.RequireAuthorization(policy =>
+            policy.AddRequirements(new RoleRequirement(roles)));
         }
     }
 }

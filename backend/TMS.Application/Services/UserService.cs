@@ -20,7 +20,7 @@ public class UsersService : IUsersService
     }
 
 
-    public async Task Register(string userName, string email, string password, int role)
+    public async Task<Guid> Register(string userName, string email, string password, int role)
     {
         var existingUser = await _usersRepository.GetByEmail(email);
         if (existingUser != null)
@@ -38,6 +38,7 @@ public class UsersService : IUsersService
 
         await _usersRepository.Add(user, role);
 
+        return user.Id;
     }
 
     public async Task<string> Login(string email, string password)
@@ -73,6 +74,10 @@ public class UsersService : IUsersService
         return await _usersRepository.GetUsersByRole(role);
     }
 
+    public async Task<List<User>> GetAllUsers()
+    {
+        return await _usersRepository.GetUsers();
+    }
     public async Task<Role> GetUserRole(Guid id)
     {
         return (await _usersRepository.GetUserRoles(id))[0];

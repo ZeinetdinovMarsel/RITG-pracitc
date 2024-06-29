@@ -11,6 +11,10 @@ namespace TMS.Application.Services
             _tsksRepository = tsksRepository;
         }
 
+        public async Task<List<TskHistory>> GetTskHistoryById(Guid id)
+        {
+            return await _tsksRepository.GetHistory(id);
+        }
         public async Task<(Tsk,string)> GetTskById(Guid id)
         {
             return await _tsksRepository.Get(id);

@@ -3,12 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\endpoints\\usersendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:endpoints\\usersendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\endpoints\\adminendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:endpoints\\adminendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\contracts\\usersrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:contracts\\usersrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\repositories\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\abstractions\\iadminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07A5E5A6-CF3F-421D-942B-29342920EB08}|..\\TMS.Application\\TMS.Application.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.application\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BABCAB62-C169-4F84-873E-1E4713AF1F58}|..\\TMS.Infrastructure\\TMS.Infrastructure.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.infrastructure\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BABCAB62-C169-4F84-873E-1E4713AF1F58}|..\\TMS.Infrastructure\\TMS.Infrastructure.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.infrastructure\\jwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\endpoints\\tsksendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:endpoints\\tsksendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\endpoints\\usersendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:endpoints\\usersendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\tmsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\authorizationoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\entities\\userroleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\repositories\\tsksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\abstractions\\iusersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{07A5E5A6-CF3F-421D-942B-29342920EB08}|..\\TMS.Application\\TMS.Application.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -17,100 +61,64 @@
       "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\abstractions\\iusersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\contracts\\usersrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:contracts\\usersrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\contracts\\rolerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:contracts\\rolerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{07A5E5A6-CF3F-421D-942B-29342920EB08}|..\\TMS.Application\\TMS.Application.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.application\\services\\tsksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\abstractions\\iroleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\abstractions\\iusersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\extentions\\apiextentions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:extentions\\apiextentions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\contracts\\tsksresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:contracts\\tsksresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\repositories\\tsksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{07A5E5A6-CF3F-421D-942B-29342920EB08}|..\\TMS.Application\\TMS.Application.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.application\\services\\roleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\enums\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\abstractions\\itsksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07A5E5A6-CF3F-421D-942B-29342920EB08}|..\\TMS.Application\\TMS.Application.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.application\\services\\tsksservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\abstractions\\itsksrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\models\\tsk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\entities\\tskentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\configurations\\tskconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\configurations\\permissionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\enums\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07A5E5A6-CF3F-421D-942B-29342920EB08}|..\\TMS.Application\\TMS.Application.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.application\\services\\permissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\entities\\userroleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\enums\\status.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BABCAB62-C169-4F84-873E-1E4713AF1F58}|..\\TMS.Infrastructure\\TMS.Infrastructure.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.infrastructure\\jwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\abstractions\\ijwtprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BABCAB62-C169-4F84-873E-1E4713AF1F58}|..\\TMS.Infrastructure\\TMS.Infrastructure.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.infrastructure\\permissionauthorizationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BABCAB62-C169-4F84-873E-1E4713AF1F58}|..\\TMS.Infrastructure\\TMS.Infrastructure.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.infrastructure\\permissionrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\tms.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\tms.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{07A5E5A6-CF3F-421D-942B-29342920EB08}|..\\TMS.Application\\TMS.Application.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.application\\tms.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\contracts\\registeruserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:contracts\\registeruserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\tmsdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\contracts\\loginuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:contracts\\loginuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\abstractions\\ipermissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BABCAB62-C169-4F84-873E-1E4713AF1F58}|..\\TMS.Infrastructure\\TMS.Infrastructure.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.infrastructure\\roleauthorizationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{07A5E5A6-CF3F-421D-942B-29342920EB08}|..\\TMS.Application\\TMS.Application.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.application\\services\\permissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BABCAB62-C169-4F84-873E-1E4713AF1F58}|..\\TMS.Infrastructure\\TMS.Infrastructure.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.infrastructure\\rolerequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BABCAB62-C169-4F84-873E-1E4713AF1F58}|..\\TMS.Infrastructure\\TMS.Infrastructure.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.infrastructure\\permissionrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BABCAB62-C169-4F84-873E-1E4713AF1F58}|..\\TMS.Infrastructure\\TMS.Infrastructure.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.infrastructure\\permissionauthorizationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{28EB2508-80C4-4C2B-BBE7-A65F0AECDAEA}|TMS.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FF511D1-D91C-440B-8736-3A1949A24260}|..\\TMS.Core\\TMS.Core.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.core\\enums\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC0036BC-EFD6-411B-8DB3-72566A03B759}|..\\TMS.DataAccess\\TMS.DataAccess.csproj|c:\\users\\marse\\source\\repos\\ritg-pracitc\\backend\\tms.dataaccess\\entities\\roleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -120,323 +128,154 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsersRequest.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\UsersRequest.cs",
-              "RelativeDocumentMoniker": "Contracts\\UsersRequest.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\UsersRequest.cs",
-              "RelativeToolTip": "Contracts\\UsersRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:52:27.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Application\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\UserService.cs",
-              "RelativeToolTip": "..\\TMS.Application\\Services\\UserService.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAwwBYAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:06:01.607Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUsersService.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IUsersService.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\IUsersService.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IUsersService.cs",
-              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\IUsersService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T17:43:11.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsersEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\UsersEndpoints.cs",
-              "RelativeDocumentMoniker": "Endpoints\\UsersEndpoints.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\UsersEndpoints.cs",
-              "RelativeToolTip": "Endpoints\\UsersEndpoints.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAmwHYAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:31:43.951Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TsksEndpoints.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\TsksEndpoints.cs",
-              "RelativeDocumentMoniker": "Endpoints\\TsksEndpoints.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\TsksEndpoints.cs",
-              "RelativeToolTip": "Endpoints\\TsksEndpoints.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAE4AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:06:58.202Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RoleRequest.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\RoleRequest.cs",
-              "RelativeDocumentMoniker": "Contracts\\RoleRequest.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\RoleRequest.cs",
-              "RelativeToolTip": "Contracts\\RoleRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAdAAAA",
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Infrastructure\\PasswordHasher.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PasswordHasher.cs",
+              "RelativeToolTip": "..\\TMS.Infrastructure\\PasswordHasher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T17:40:11.955Z",
+              "WhenOpened": "2024-06-29T14:40:40.596Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UsersRepository.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\UsersRepository.cs",
-              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Repositories\\UsersRepository.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\UsersRepository.cs",
-              "RelativeToolTip": "..\\TMS.DataAccess\\Repositories\\UsersRepository.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAIwEoAAAAFAAAA",
+              "Title": "JwtProvider.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\JwtProvider.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Infrastructure\\JwtProvider.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\JwtProvider.cs",
+              "RelativeToolTip": "..\\TMS.Infrastructure\\JwtProvider.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T14:27:36.522Z",
+              "WhenOpened": "2024-06-29T14:40:30.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\AdminEndpoints.cs",
+              "RelativeDocumentMoniker": "Endpoints\\AdminEndpoints.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\AdminEndpoints.cs",
+              "RelativeToolTip": "Endpoints\\AdminEndpoints.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowC8AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:17:25.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Application\\Services\\AdminService.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\AdminService.cs",
+              "RelativeToolTip": "..\\TMS.Application\\Services\\AdminService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAADwvxIAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T13:14:23.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IAdminRepository.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\IAdminRepository.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IAdminRepository.cs",
+              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\IAdminRepository.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAswAgAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T13:17:38.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Repositories\\AdminRepository.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\AdminRepository.cs",
+              "RelativeToolTip": "..\\TMS.DataAccess\\Repositories\\AdminRepository.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T13:15:03.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsersRequest.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\UsersRequest.cs",
+              "RelativeDocumentMoniker": "Contracts\\UsersRequest.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\UsersRequest.cs",
+              "RelativeToolTip": "Contracts\\UsersRequest.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAswBUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:58:21.16Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "IUsersRepository.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IUsersRepository.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\IUsersRepository.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IUsersRepository.cs",
-              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\IUsersRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAlAAAA",
+              "Title": "TsksEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\TsksEndpoints.cs",
+              "RelativeDocumentMoniker": "Endpoints\\TsksEndpoints.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\TsksEndpoints.cs",
+              "RelativeToolTip": "Endpoints\\TsksEndpoints.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAcwFsAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:53:33.684Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Role.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Role.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\Enums\\Role.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Role.cs",
-              "RelativeToolTip": "..\\TMS.Core\\Enums\\Role.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T14:38:00.959Z",
+              "WhenOpened": "2024-06-29T12:49:55.151Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "TsksResponse.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\TsksResponse.cs",
-              "RelativeDocumentMoniker": "Contracts\\TsksResponse.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\TsksResponse.cs",
-              "RelativeToolTip": "Contracts\\TsksResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAbAAAA",
+              "Title": "UsersEndpoints.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\UsersEndpoints.cs",
+              "RelativeDocumentMoniker": "Endpoints\\UsersEndpoints.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Endpoints\\UsersEndpoints.cs",
+              "RelativeToolTip": "Endpoints\\UsersEndpoints.cs",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAYwEQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:32:06.538Z",
+              "WhenOpened": "2024-06-29T12:48:38.89Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "TsksRepository.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\TsksRepository.cs",
-              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Repositories\\TsksRepository.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\TsksRepository.cs",
-              "RelativeToolTip": "..\\TMS.DataAccess\\Repositories\\TsksRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABUAAAA",
+              "Title": "UsersRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\UsersRepository.cs",
+              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Repositories\\UsersRepository.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\UsersRepository.cs",
+              "RelativeToolTip": "..\\TMS.DataAccess\\Repositories\\UsersRepository.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAArwBQAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:05:46.579Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAABgAAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-28T15:40:01.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-28T16:52:06.633Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Tsk.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Models\\Tsk.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\Models\\Tsk.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Models\\Tsk.cs",
-              "RelativeToolTip": "..\\TMS.Core\\Models\\Tsk.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAEwCAAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:08:03.157Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ITsksRepository.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\ITsksRepository.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\ITsksRepository.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\ITsksRepository.cs",
-              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\ITsksRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:10:46.957Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "TsksService.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\TsksService.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Application\\Services\\TsksService.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\TsksService.cs",
-              "RelativeToolTip": "..\\TMS.Application\\Services\\TsksService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:06:06.277Z",
+              "WhenOpened": "2024-06-29T12:44:43.142Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "ITsksService.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\ITsksService.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\ITsksService.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\ITsksService.cs",
-              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\ITsksService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAAvAAAA",
+              "Title": "TsksRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\TsksRepository.cs",
+              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Repositories\\TsksRepository.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Repositories\\TsksRepository.cs",
+              "RelativeToolTip": "..\\TMS.DataAccess\\Repositories\\TsksRepository.cs",
+              "ViewState": "AQIAAHYAAAAAAAAAAAAcwIsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:07:15.905Z",
+              "WhenOpened": "2024-06-29T12:45:03.408Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "TskConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Configurations\\TskConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Configurations\\TskConfiguration.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Configurations\\TskConfiguration.cs",
-              "RelativeToolTip": "..\\TMS.DataAccess\\Configurations\\TskConfiguration.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAuwCkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:28:49.667Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "TskEntity.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Entities\\TskEntity.cs",
-              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Entities\\TskEntity.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Entities\\TskEntity.cs",
-              "RelativeToolTip": "..\\TMS.DataAccess\\Entities\\TskEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:05:43.893Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "PermissionConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Configurations\\PermissionConfiguration.cs",
-              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Configurations\\PermissionConfiguration.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Configurations\\PermissionConfiguration.cs",
-              "RelativeToolTip": "..\\TMS.DataAccess\\Configurations\\PermissionConfiguration.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T15:58:27.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Permission.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Permission.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\Enums\\Permission.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Permission.cs",
-              "RelativeToolTip": "..\\TMS.Core\\Enums\\Permission.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T15:39:52.978Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "PermissionService.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\PermissionService.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Application\\Services\\PermissionService.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\PermissionService.cs",
-              "RelativeToolTip": "..\\TMS.Application\\Services\\PermissionService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T15:39:44.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserRoleEntity.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Entities\\UserRoleEntity.cs",
-              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Entities\\UserRoleEntity.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Entities\\UserRoleEntity.cs",
-              "RelativeToolTip": "..\\TMS.DataAccess\\Entities\\UserRoleEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T15:36:00.609Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Status.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Status.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\Enums\\Status.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Status.cs",
-              "RelativeToolTip": "..\\TMS.Core\\Enums\\Status.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T15:32:08.792Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 14,
               "Title": "UserEntity.cs",
               "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Entities\\UserEntity.cs",
               "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Entities\\UserEntity.cs",
@@ -444,124 +283,319 @@
               "RelativeToolTip": "..\\TMS.DataAccess\\Entities\\UserEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:51:38.348Z",
+              "WhenOpened": "2024-06-29T13:38:34.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "JwtProvider.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\JwtProvider.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Infrastructure\\JwtProvider.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\JwtProvider.cs",
-              "RelativeToolTip": "..\\TMS.Infrastructure\\JwtProvider.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAqwD8AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T12:16:31.149Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "IJwtProvider.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IJwtProvider.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\IJwtProvider.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IJwtProvider.cs",
-              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\IJwtProvider.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T14:51:31.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "PermissionAuthorizationHandler.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PermissionAuthorizationHandler.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Infrastructure\\PermissionAuthorizationHandler.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PermissionAuthorizationHandler.cs",
-              "RelativeToolTip": "..\\TMS.Infrastructure\\PermissionAuthorizationHandler.cs",
+              "DocumentIndex": 11,
+              "Title": "AuthorizationOptions.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\AuthorizationOptions.cs",
+              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\AuthorizationOptions.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\AuthorizationOptions.cs",
+              "RelativeToolTip": "..\\TMS.DataAccess\\AuthorizationOptions.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T14:37:32.193Z",
+              "WhenOpened": "2024-06-29T12:27:11.342Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "PermissionRequirement.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PermissionRequirement.cs",
-              "RelativeDocumentMoniker": "..\\TMS.Infrastructure\\PermissionRequirement.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PermissionRequirement.cs",
-              "RelativeToolTip": "..\\TMS.Infrastructure\\PermissionRequirement.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T14:37:30.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "TMS.DataAccess",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj",
-              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\TMS.DataAccess.csproj",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj",
-              "RelativeToolTip": "..\\TMS.DataAccess\\TMS.DataAccess.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-28T13:59:59.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "TMS.Core",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj",
-              "RelativeDocumentMoniker": "..\\TMS.Core\\TMS.Core.csproj",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj",
-              "RelativeToolTip": "..\\TMS.Core\\TMS.Core.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-28T13:59:51.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "TMS.Application",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\TMS.Application.csproj",
-              "RelativeDocumentMoniker": "..\\TMS.Application\\TMS.Application.csproj",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\TMS.Application.csproj",
-              "RelativeToolTip": "..\\TMS.Application\\TMS.Application.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-28T13:59:35.994Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "RegisterUserRequest.cs",
-              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\RegisterUserRequest.cs",
-              "RelativeDocumentMoniker": "Contracts\\RegisterUserRequest.cs",
-              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\RegisterUserRequest.cs",
-              "RelativeToolTip": "Contracts\\RegisterUserRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:55:57.424Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 10,
               "Title": "TMSDbContext.cs",
               "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMSDbContext.cs",
               "RelativeDocumentMoniker": "..\\TMS.DataAccess\\TMSDbContext.cs",
               "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMSDbContext.cs",
               "RelativeToolTip": "..\\TMS.DataAccess\\TMSDbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T13:20:21.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserRoleEntity.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Entities\\UserRoleEntity.cs",
+              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Entities\\UserRoleEntity.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Entities\\UserRoleEntity.cs",
+              "RelativeToolTip": "..\\TMS.DataAccess\\Entities\\UserRoleEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T11:31:33.577Z",
+              "WhenOpened": "2024-06-29T13:38:37.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IUsersRepository.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IUsersRepository.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\IUsersRepository.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IUsersRepository.cs",
+              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\IUsersRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:53:13.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Application\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\UserService.cs",
+              "RelativeToolTip": "..\\TMS.Application\\Services\\UserService.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAqwCYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:17:32.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IUsersService.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IUsersService.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\IUsersService.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IUsersService.cs",
+              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\IUsersService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:52:07.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAmwBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:18:52.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IRoleService.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IRoleService.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\IRoleService.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IRoleService.cs",
+              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\IRoleService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:43:59.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TsksService.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\TsksService.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Application\\Services\\TsksService.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\TsksService.cs",
+              "RelativeToolTip": "..\\TMS.Application\\Services\\TsksService.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAcwCwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:41:58.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ApiExtentions.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Extentions\\ApiExtentions.cs",
+              "RelativeDocumentMoniker": "Extentions\\ApiExtentions.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Extentions\\ApiExtentions.cs",
+              "RelativeToolTip": "Extentions\\ApiExtentions.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAIwEoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:14:13.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Role.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Core\\Enums\\Role.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Role.cs",
+              "RelativeToolTip": "..\\TMS.Core\\Enums\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:24:08.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "TsksResponse.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\TsksResponse.cs",
+              "RelativeDocumentMoniker": "Contracts\\TsksResponse.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\TsksResponse.cs",
+              "RelativeToolTip": "Contracts\\TsksResponse.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T13:08:01.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "RoleService.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\RoleService.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Application\\Services\\RoleService.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\RoleService.cs",
+              "RelativeToolTip": "..\\TMS.Application\\Services\\RoleService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:41:56.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IPermissionService.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IPermissionService.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Core\\Abstractions\\IPermissionService.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Abstractions\\IPermissionService.cs",
+              "RelativeToolTip": "..\\TMS.Core\\Abstractions\\IPermissionService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:44:10.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "RegisterUserRequest.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\RegisterUserRequest.cs",
+              "RelativeDocumentMoniker": "Contracts\\RegisterUserRequest.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\RegisterUserRequest.cs",
+              "RelativeToolTip": "Contracts\\RegisterUserRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:58:53.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LoginUserRequest.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\LoginUserRequest.cs",
+              "RelativeDocumentMoniker": "Contracts\\LoginUserRequest.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\Contracts\\LoginUserRequest.cs",
+              "RelativeToolTip": "Contracts\\LoginUserRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:58:59.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "RoleAuthorizationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\RoleAuthorizationHandler.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Infrastructure\\RoleAuthorizationHandler.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\RoleAuthorizationHandler.cs",
+              "RelativeToolTip": "..\\TMS.Infrastructure\\RoleAuthorizationHandler.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAQwC4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:31:40.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "PermissionService.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\PermissionService.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Application\\Services\\PermissionService.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\Services\\PermissionService.cs",
+              "RelativeToolTip": "..\\TMS.Application\\Services\\PermissionService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:42:02.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "RoleRequirement.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\RoleRequirement.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Infrastructure\\RoleRequirement.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\RoleRequirement.cs",
+              "RelativeToolTip": "..\\TMS.Infrastructure\\RoleRequirement.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:15:22.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "PermissionRequirement.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PermissionRequirement.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Infrastructure\\PermissionRequirement.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PermissionRequirement.cs",
+              "RelativeToolTip": "..\\TMS.Infrastructure\\PermissionRequirement.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:14:58.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "PermissionAuthorizationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PermissionAuthorizationHandler.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Infrastructure\\PermissionAuthorizationHandler.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\PermissionAuthorizationHandler.cs",
+              "RelativeToolTip": "..\\TMS.Infrastructure\\PermissionAuthorizationHandler.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAYwAoAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:14:41.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Permission.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Permission.cs",
+              "RelativeDocumentMoniker": "..\\TMS.Core\\Enums\\Permission.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\Enums\\Permission.cs",
+              "RelativeToolTip": "..\\TMS.Core\\Enums\\Permission.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:27:32.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAABIAAAAAAAAAAAAcwCYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-29T12:28:04.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RoleEntity.cs",
+              "DocumentMoniker": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Entities\\RoleEntity.cs",
+              "RelativeDocumentMoniker": "..\\TMS.DataAccess\\Entities\\RoleEntity.cs",
+              "ToolTip": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\Entities\\RoleEntity.cs",
+              "RelativeToolTip": "..\\TMS.DataAccess\\Entities\\RoleEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAcwBAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T12:27:02.652Z",
               "EditorCaption": ""
             }
           ]

@@ -10,5 +10,6 @@ namespace TMS.Core.Abstractions
         Task<List<Tsk>> GetAllTsksById(Guid id);
         Task<Guid> UpdateTsk(Guid id, Tsk tsk);
         Task<Guid> ChangeTskStat(Guid id, Tsk tsk);
+        Task<List<TskHistory>> GetTskHistoryById(Guid id);
     }
 }

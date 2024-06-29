@@ -26,10 +26,11 @@ builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 
 builder.Services.AddScoped<ITsksService, TsksService>();
 builder.Services.AddScoped<UsersService>();
-
+builder.Services.AddScoped<AdminService>();
 
 builder.Services.AddScoped<ITsksRepository, TsksRepository>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection(nameof(JwtOptions)));
 builder.Services.Configure<AuthorizationOptions>(builder.Configuration.GetSection(nameof(AuthorizationOptions)));

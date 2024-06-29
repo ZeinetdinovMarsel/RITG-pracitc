@@ -41,6 +41,21 @@ namespace TMS.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TskHistories",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    TskId = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ChangeDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Changes = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TskHistories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Tsks",
                 columns: table => new
                 {
@@ -49,7 +64,7 @@ namespace TMS.DataAccess.Migrations
                     AssignedUserId = table.Column<Guid>(type: "uuid", nullable: false),
                     Title = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Comment = table.Column<string>(type: "text", nullable: false),
-                    Priority = table.Column<string>(type: "text", nullable: false),
+                    Priority = table.Column<int>(type: "integer", nullable: false),
                     Status = table.Column<int>(type: "integer", nullable: false),
                     StartDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     EndDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
@@ -152,6 +167,7 @@ namespace TMS.DataAccess.Migrations
                     { 2, 1 },
                     { 3, 1 },
                     { 4, 1 },
+                    { 5, 1 },
                     { 2, 2 },
                     { 5, 2 },
                     { 1, 3 },
@@ -175,6 +191,9 @@ namespace TMS.DataAccess.Migrations
         {
             migrationBuilder.DropTable(
                 name: "RolePermissionEntity");
+
+            migrationBuilder.DropTable(
+                name: "TskHistories");
 
             migrationBuilder.DropTable(
                 name: "Tsks");

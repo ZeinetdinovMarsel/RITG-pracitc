@@ -1,12 +1,20 @@
 ﻿namespace TMS.API.Contracts
 {
+    public record TsksHistoryResponse(
+       Guid Id,
+       Guid TskId,
+       Guid UserId,
+       DateTime ChangeDate,
+       string Changes
+   );
+
     public record TsksResponse(
         Guid Id,
         Guid CreatorId,
         Guid AssignedUserId,
         string Title,
         string Comment,
-        string Priority,
+        int Priority,
         int Status,
         DateTime StartDate,
         DateTime EndDate
@@ -15,7 +23,7 @@
         Guid AssignedUserId,
         string Title,
         string Comment,
-        string Priority,
+        int Priority,
         int Status,
         DateTime StartDate,
         DateTime EndDate

@@ -7,7 +7,7 @@ namespace TMS.Core.Models
         public const int MAX_TITLE_LENGTH = 50;
         private Tsk(Guid id, Guid creatorId, Guid assignedUserId,
             string title, string comment,
-            string priority, int status,
+            int priority, int status,
             DateTime startDate, DateTime endDate)
         {
             Id = id;
@@ -25,7 +25,7 @@ namespace TMS.Core.Models
         public Guid AssignedUserId { get; } = Guid.Empty;
         public string Title { get; } = string.Empty;
         public string Comment { get; } = string.Empty;
-        public string Priority { get; } = string.Empty;
+        public int Priority { get; }
         public int Status { get; }
         public DateTime StartDate { get; }
         public DateTime EndDate { get; }
@@ -33,7 +33,7 @@ namespace TMS.Core.Models
         public static (Tsk Tsk, string Error) Create(
             Guid id, Guid creatorId, Guid assignedUserId,
             string title, string comment,
-            string priority, int status,
+            int priority, int status,
             DateTime startDate, DateTime endDate)
         {
             var error = string.Empty;

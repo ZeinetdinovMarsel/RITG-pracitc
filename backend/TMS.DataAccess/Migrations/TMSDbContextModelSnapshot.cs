@@ -137,6 +137,11 @@ namespace TMS.DataAccess.Migrations
                         },
                         new
                         {
+                            RoleId = 1,
+                            PermissionId = 5
+                        },
+                        new
+                        {
                             RoleId = 2,
                             PermissionId = 2
                         },
@@ -181,9 +186,8 @@ namespace TMS.DataAccess.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Priority")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Priority")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("timestamp with time zone");
@@ -199,6 +203,30 @@ namespace TMS.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tsks");
+                });
+
+            modelBuilder.Entity("TMS.DataAccess.Entities.TskHistoryEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("ChangeDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Changes")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("TskId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TskHistories");
                 });
 
             modelBuilder.Entity("TMS.DataAccess.Entities.UserEntity", b =>

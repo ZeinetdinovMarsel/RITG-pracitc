@@ -5,7 +5,7 @@ interface Props {
     title: string;
     creatorId: string;
     assignedUserId: string;
-    priority: string;
+    priority: number;
     status: number;
     startDate: Date;
     endDate: Date;
@@ -40,6 +40,19 @@ export const CardTitle = ({
                 return "Неизвестный статус";
         }
     };
+
+    const getPriorityText = (status: number) => {
+        switch (status) {
+            case 1:
+                return "Низкий";
+            case 2:
+                return "Средний";
+            case 3:
+                return "Высокий";
+            default:
+                return "Неизвестный приоритет";
+        }
+    };
     return (
         <div style={{
             display: "flex",
@@ -53,7 +66,7 @@ export const CardTitle = ({
             {userRole !== Role.Performer && (
                 <p className="card_title">Пользователю: {getUserName(assignedUserId)}</p>
             )}
-            <p className="card_title">Приоритет: {priority}</p>
+            <p className="card_title">Приоритет: {getPriorityText(priority)}</p>
             <p className="card_title">Статус: {getStatusText(status)}</p>
             <p className="card_price">Дата начала: {format(startDate, 'dd.MM.yyyy')}</p>
             <p className="card_price">Дата конца: {format(endDate, 'dd.MM.yyyy')}</p>

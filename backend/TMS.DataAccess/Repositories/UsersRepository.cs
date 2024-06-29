@@ -3,6 +3,7 @@ using TMS.DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 using TMS.Core.Abstractions;
 using TMS.Core.Enums;
+using System.Data;
 namespace TMS.DataAccess.Repositories;
 public class UsersRepository : IUsersRepository
 {
@@ -17,7 +18,7 @@ public class UsersRepository : IUsersRepository
     {
         var roleEntity = await _context.Roles
             .SingleOrDefaultAsync(r => r.Id == role)
-            ?? throw new InvalidOperationException("Role not found");
+            ?? throw new InvalidOperationException("Роль не найдена");
 
         var userEntity = new UserEntity()
         {
@@ -57,6 +58,8 @@ public class UsersRepository : IUsersRepository
 
         return user;
     }
+
+
     public async Task<HashSet<Permission>> GetUserPermissions(Guid userId)
     {
         var roles = await _context.Users
@@ -73,6 +76,20 @@ public class UsersRepository : IUsersRepository
             .Select(p => (Permission)p.Id)
             .ToHashSet();
     }
+    public async Task<List<User>> GetUsers()
+
+    {
+        var userEntitites = await _context.Users
+            .AsNoTracking()
+            .ToListAsync();
+
+        var Users = userEntitites
+            .Select(u => User.Create(u.Id, u.UserName, u.PasswordHash, u.Email))
+            .ToList();
+
+        return Users;
+    }
+
     public async Task<List<User>> GetUsersByRole(int role)
     {
         var userEntitites = await _context.Users

@@ -6,6 +6,8 @@ import Link from "next/link";
 import "./globals.css";
 
 import { useRouter } from "next/navigation";
+import { getUserRole } from "./services/login";
+import { Role } from "./enums/Role";
 
 const items = [
   { key: "Home", label: <Link href={"/"}>Главная</Link> },
@@ -18,7 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [name, setName] = useState('');
+  const [userRole, setUserRole] = useState<Role>(1);
   const router = useRouter();
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -36,7 +40,8 @@ export default function RootLayout({
 
         const content = await response.json();
         setName(content.userName);
-        
+        const role = await getUserRole();
+        setUserRole(role);
       } catch (error) {
         console.error('Fetch error:', error);
       }
@@ -56,8 +61,9 @@ export default function RootLayout({
 
       if (!response.ok) {
         throw new Error('Logout request failed');
-        
       }
+
+      router.push('/login');
       window.location.reload();
       setName('');
     } catch (error) {
@@ -78,6 +84,11 @@ export default function RootLayout({
               {items.map(item => (
                 <Menu.Item key={item.key}>{item.label}</Menu.Item>
               ))}
+              {userRole === Role.Admin && (
+                <Menu.Item key="AdminPanel">
+                  <Link href={"/admin"}>Админ</Link>
+                </Menu.Item>
+              )}
               {isAuthenticated ? (
                 <Menu.Item key="Logout" onClick={handleLogout}>
                   Выход

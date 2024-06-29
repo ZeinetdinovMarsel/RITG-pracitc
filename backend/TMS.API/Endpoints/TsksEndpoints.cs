@@ -17,6 +17,7 @@ namespace TMS.API.Endpoints
             app.MapPut("tsks/{id:guid}", UpdateTsk).RequirePermissions(Permission.Update);
             app.MapDelete("tsks/{id:guid}", DeleteTsk).RequirePermissions(Permission.Delete);
             app.MapPut("tsks/status/change/{id:guid}", StatusChangeTsk).RequirePermissions(Permission.Change);
+            app.MapGet("tsks/history", GetTskHisory).RequirePermissions(Permission.Read);
             return app;
         }
 
@@ -131,6 +132,22 @@ namespace TMS.API.Endpoints
 
             var tskId = await tsksService.ChangeTskStat(id, tsk);
             return Results.Ok(tskId);
+        }
+        private static async Task<IResult> GetTskHisory(
+            ITsksService tsksService,
+            Guid id
+            )
+        {
+            var history = await tsksService.GetTskHistoryById(id);
+
+            var response = history.Select(h => new TsksHistoryResponse(
+                h.Id,
+                h.TskId,
+                h.UserId,
+                h.ChangeDate,
+                h.Changes));
+
+            return Results.Ok(response);
         }
     }
 }

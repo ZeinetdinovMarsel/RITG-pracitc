@@ -35,8 +35,8 @@ export const CreateUpdateTask = ({
     const [title, setTitle] = useState<string>("");
     const [comment, setComment] = useState<string>("");
     const [assignedUserId, setAssignedUserId] = useState<string>("");
-    const [priority, setPriority] = useState<string>("");
-    const [status, setStatus] = useState<number>(0);
+    const [priority, setPriority] = useState<number>(1);
+    const [status, setStatus] = useState<number>(1);
     const [startDate, setStartDate] = useState<string>(format(new Date(), 'yyyy-MM-dd'));
     const [endDate, setEndDate] = useState<string>(format(new Date(), 'yyyy-MM-dd'));
     const [users, setUsers] = useState<{ userId: string; name: string }[]>([]);
@@ -119,9 +119,9 @@ export const CreateUpdateTask = ({
                     placeholder="Приоритет"
                     style={{ width: '100%', marginBottom: '16px' }}
                 >
-                    <Option value="Низкий">Низкий</Option>
-                    <Option value="Средний">Средний</Option>
-                    <Option value="Высокий">Высокий</Option>
+                    <Option value={1}>Низкий</Option>
+                    <Option value={2}>Средний</Option>
+                    <Option value={3}>Высокий</Option>
                 </Select>
                 <Select
                     value={status}
