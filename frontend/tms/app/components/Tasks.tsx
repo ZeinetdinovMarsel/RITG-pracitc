@@ -10,21 +10,26 @@ interface Props {
     tasks: Task[];
     handleDelete: (id: string) => void;
     handleOpen: (task: Task) => void;
-    handleAccept: (id: string) => void
+    handleAccept: (id: string) => void;
     userRole: Role;
-    showHistory: (id: string) => void
+    showHistory: (id: string) => void;
 }
 
 const sortTasks = (tasks: Task[]) => {
     return tasks.sort((a, b) => {
+        if (a.status !== b.status) {
+            return a.status - b.status;
+        }
         const priorityComparison = b.priority - a.priority;
-        if (priorityComparison !== 0) return priorityComparison;
+        if (priorityComparison !== 0) {
+            return priorityComparison;
+        }
 
         return new Date(a.endDate).getTime() - new Date(b.endDate).getTime();
     });
 };
 
-export const Tasks = ({ tasks, handleDelete, handleOpen, handleAccept, userRole,showHistory }: Props) => {
+export const Tasks = ({ tasks, handleDelete, handleOpen, handleAccept, userRole, showHistory }: Props) => {
     const sortedTasks = sortTasks(tasks);
     const [users, setUsers] = useState<{ userId: string; name: string }[]>([]);
 
@@ -32,7 +37,7 @@ export const Tasks = ({ tasks, handleDelete, handleOpen, handleAccept, userRole,
         const getUsers = async () => {
             try {
                 const usersDataPerformer = await getUsersbyRole(Role.Performer);
-                const usersDataManager  = await getUsersbyRole(Role.Manager);
+                const usersDataManager = await getUsersbyRole(Role.Manager);
                 const usersData = [...usersDataPerformer, ...usersDataManager];
                 setUsers(usersData);
             } catch (error) {
@@ -55,61 +60,62 @@ export const Tasks = ({ tasks, handleDelete, handleOpen, handleAccept, userRole,
     return (
         <div className="cards">
             {sortedTasks.map((task: Task) => (
-                <Card
-                    key={task.id}
-                    title={<>
-                        <CardTitle
-                            title={task.title}
-                            creatorId={task.creatorId}
-                            assignedUserId={task.assignedUserId}
-                            priority={task.priority}
-                            status={task.status}
-                            startDate={new Date(task.startDate)}
-                            endDate={new Date(task.endDate)}
-                            users={users}
-                            userRole={userRole}
-                        />
-                    </>}
+                // Check if user is Performer and task status is not completed (status !== 3)
+                !(userRole === Role.Performer && task.status === 3) && (
+                    <Card
+                        key={task.id}
+                        title={<>
+                            <CardTitle
+                                title={task.title}
+                                creatorId={task.creatorId}
+                                assignedUserId={task.assignedUserId}
+                                priority={task.priority}
+                                status={task.status}
+                                startDate={new Date(task.startDate)}
+                                endDate={new Date(task.endDate)}
+                                users={users}
+                                userRole={userRole}
+                            />
+                        </>}
 
-                    bordered={false}
-                >
-                    <p>Комментарий: </p>
-                    <p style={{ maxWidth: 400, wordWrap: 'break-word' }}>{task.comment}</p>
+                        bordered={false}
+                    >
+                        <p>Комментарий: </p>
+                        <p style={{ maxWidth: 400, wordWrap: 'break-word' }}>{task.comment}</p>
 
-                    <div className="card_buttons">
-                        {(userRole === Role.Admin || userRole === Role.Manager) && (
-                            <Button onClick={() => handleOpen(task)} style={{ flex: 1 }}>
-                                Редактировать
-                            </Button>
-                        )}
-
-                        {userRole === Role.Admin && (
-                            <Button
-                                onClick={() => handleDelete(task.id)}
-                                danger
-                                style={{ flex: 1, marginLeft: 8 }}
-                            >
-                                Удалить
-                            </Button>
-                        )}
-
-
-                        {userRole === Role.Performer && (
-                            task.status === 1 ? (
-                                <Button onClick={() => handleAcceptTask(task.id)} style={{ flex: 1 }}>
-                                    Принять задачу
+                        <div className="card_buttons">
+                            {(userRole === Role.Admin || userRole === Role.Manager) && (
+                                <Button onClick={() => handleOpen(task)} style={{ flex: 1 }}>
+                                    Редактировать
                                 </Button>
-                            ) : task.status === 2 ? (
-                                <Button onClick={() => handleAcceptTask(task.id)} style={{ flex: 1 }}>
-                                    Завершить задачу
+                            )}
+
+                            {userRole === Role.Admin && (
+                                <Button
+                                    onClick={() => handleDelete(task.id)}
+                                    danger
+                                    style={{ flex: 1, marginLeft: 8 }}
+                                >
+                                    Удалить
                                 </Button>
-                            ) : null
-                        )}
-                        <Button onClick={() => showHistory(task.id)}>История изменений</Button>
-                    </div>
-                </Card>
+                            )}
+
+                            {userRole === Role.Performer && (
+                                task.status === 1 ? (
+                                    <Button onClick={() => handleAcceptTask(task.id)} style={{ flex: 1 }}>
+                                        Принять задачу
+                                    </Button>
+                                ) : task.status === 2 ? (
+                                    <Button onClick={() => handleAcceptTask(task.id)} style={{ flex: 1 }}>
+                                        Завершить задачу
+                                    </Button>
+                                ) : null
+                            )}
+                            <Button onClick={() => showHistory(task.id)}>История изменений</Button>
+                        </div>
+                    </Card>
+                )
             ))}
         </div>
     );
 };
-

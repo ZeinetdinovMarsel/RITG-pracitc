@@ -12,7 +12,7 @@ using TMS.DataAccess;
 namespace TMS.DataAccess.Migrations
 {
     [DbContext(typeof(TMSDbContext))]
-    [Migration("20240629092913_init")]
+    [Migration("20240630082540_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -176,6 +176,9 @@ namespace TMS.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime>("AcceptDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<Guid>("AssignedUserId")
                         .HasColumnType("uuid");
 
@@ -187,6 +190,9 @@ namespace TMS.DataAccess.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("EndDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("FinishDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("Priority")

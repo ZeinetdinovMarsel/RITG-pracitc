@@ -28,7 +28,8 @@ namespace TMS.DataAccess.Repositories
                 tskEntity.Id, tskEntity.CreatorId, tskEntity.AssignedUserId,
                 tskEntity.Title, tskEntity.Comment,
                 tskEntity.Priority, tskEntity.Status,
-                tskEntity.StartDate, tskEntity.EndDate);
+                tskEntity.StartDate, tskEntity.EndDate,
+                tskEntity.AcceptDate, tskEntity.EndDate);
 
             return (tsk, error);
         }
@@ -83,7 +84,7 @@ namespace TMS.DataAccess.Repositories
                 .Select(t => Tsk.Create(
                     t.Id, t.CreatorId, t.AssignedUserId,
                     t.Title, t.Comment, t.Priority, t.Status,
-                    t.StartDate, t.EndDate).Tsk)
+                    t.StartDate, t.EndDate, t.AcceptDate, t.FinishDate).Tsk)
                 .ToList();
 
             return tasks;
@@ -147,6 +148,18 @@ namespace TMS.DataAccess.Repositories
         {
             var oldTskEntity = await _context.Tsks.AsNoTracking().FirstOrDefaultAsync(t => t.Id == id);
 
+            var status = Math.Clamp(tsk.Status + 1, 1, 3);
+
+            DateTime acceptDate = oldTskEntity.AcceptDate;
+            DateTime finishDate = oldTskEntity.FinishDate;
+            if (status == 2)
+            {
+                acceptDate = DateTime.UtcNow;
+            }
+            else if (status == 3)
+            {
+                finishDate = DateTime.UtcNow;
+            }
             var newTskEntity = new TskEntity
             {
                 CreatorId = tsk.CreatorId,
@@ -154,10 +167,13 @@ namespace TMS.DataAccess.Repositories
                 Title = tsk.Title,
                 Comment = tsk.Comment,
                 Priority = tsk.Priority,
-                Status = tsk.Status + 1,
+                Status = status,
                 StartDate = tsk.StartDate,
                 EndDate = tsk.EndDate,
+                AcceptDate = acceptDate,
+                FinishDate = finishDate
             };
+
 
             await _context.Tsks
                 .Where(t => t.Id == id)
@@ -169,7 +185,9 @@ namespace TMS.DataAccess.Repositories
                     .SetProperty(t => t.Priority, t => newTskEntity.Priority)
                     .SetProperty(t => t.Status, t => newTskEntity.Status)
                     .SetProperty(t => t.StartDate, t => newTskEntity.StartDate)
-                    .SetProperty(t => t.EndDate, t => newTskEntity.EndDate));
+                    .SetProperty(t => t.EndDate, t => newTskEntity.EndDate)
+                    .SetProperty(t => t.AcceptDate, t => newTskEntity.AcceptDate)
+                    .SetProperty(t => t.FinishDate, t => newTskEntity.FinishDate));
             await RecordHistory(oldTskEntity, newTskEntity, tsk.CreatorId, "Обновлено: ");
             return id;
 
@@ -223,7 +241,7 @@ namespace TMS.DataAccess.Repositories
 
 
             await _context.TskHistories.AddAsync(historyEntity);
-            await _context.SaveChangesAsync();
+            _context.SaveChanges();
 
         }
         public async Task<List<TskHistory>> GetHistory(Guid taskId)

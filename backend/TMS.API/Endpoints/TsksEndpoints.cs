@@ -36,11 +36,11 @@ namespace TMS.API.Endpoints
                 t.Id,
                 t.CreatorId,
                 t.AssignedUserId,
-                t.Title, 
-                t.Comment, 
-                t.Priority, 
-                t.Status, 
-                t.StartDate, 
+                t.Title,
+                t.Comment,
+                t.Priority,
+                t.Status,
+                t.StartDate,
                 t.EndDate));
 
             return Results.Ok(response);
@@ -66,7 +66,9 @@ namespace TMS.API.Endpoints
                 request.Priority,
                 request.Status,
                 request.StartDate,
-                request.EndDate);
+                request.EndDate,
+                DateTime.UtcNow.Date,
+                DateTime.UtcNow.Date);
 
             if (!string.IsNullOrEmpty(error))
                 return Results.BadRequest(error);
@@ -78,7 +80,7 @@ namespace TMS.API.Endpoints
 
         private static async Task<IResult> UpdateTsk(
             [FromBody] TsksRequest request,
-            ITsksService tsksService, 
+            ITsksService tsksService,
             Guid id,
             UsersService usersService,
             HttpContext context)
@@ -97,7 +99,9 @@ namespace TMS.API.Endpoints
                 request.Priority,
                 request.Status,
                 request.StartDate,
-                request.EndDate);
+                request.EndDate,
+               DateTime.UtcNow.Date,
+                DateTime.UtcNow.Date);
 
 
             if (!string.IsNullOrEmpty(error))

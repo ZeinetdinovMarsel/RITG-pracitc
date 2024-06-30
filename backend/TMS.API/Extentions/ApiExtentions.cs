@@ -18,6 +18,7 @@ namespace TMS.API.Extentions
             app.MapTsksEndpoints();
             app.MapUsersEndpoints();
             app.MapAdminEndpoints();
+            app.MapReportEndpoints();
         }
 
         public static void AddApiAuthentification(

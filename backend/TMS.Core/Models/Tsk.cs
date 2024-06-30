@@ -8,7 +8,8 @@ namespace TMS.Core.Models
         private Tsk(Guid id, Guid creatorId, Guid assignedUserId,
             string title, string comment,
             int priority, int status,
-            DateTime startDate, DateTime endDate)
+            DateTime startDate, DateTime endDate,
+            DateTime acceptDate, DateTime finishDate)
         {
             Id = id;
             CreatorId = creatorId;
@@ -19,6 +20,9 @@ namespace TMS.Core.Models
             Status = status;
             StartDate = startDate;
             EndDate = endDate;
+            AcceptDate = acceptDate;
+            FinishDate = finishDate;
+
         }
         public Guid Id { get; }
         public Guid CreatorId { get; } = Guid.Empty;
@@ -29,12 +33,14 @@ namespace TMS.Core.Models
         public int Status { get; }
         public DateTime StartDate { get; }
         public DateTime EndDate { get; }
-
+        public DateTime AcceptDate { get; }
+        public DateTime FinishDate { get; }
         public static (Tsk Tsk, string Error) Create(
             Guid id, Guid creatorId, Guid assignedUserId,
             string title, string comment,
             int priority, int status,
-            DateTime startDate, DateTime endDate)
+            DateTime startDate, DateTime endDate,
+            DateTime acceptDate, DateTime finishDate)
         {
             var error = string.Empty;
             if (string.IsNullOrEmpty(title) || title.Length > MAX_TITLE_LENGTH)
@@ -45,7 +51,7 @@ namespace TMS.Core.Models
             {
                 error = "Дата конца не может быть раньше или равна дате начала";
             }
-            var Tsk = new Tsk(id, creatorId, assignedUserId, title, comment, priority, status, startDate, endDate);
+            var Tsk = new Tsk(id, creatorId, assignedUserId, title, comment, priority, status, startDate, endDate, acceptDate, finishDate);
             return (Tsk, error);
         }
 

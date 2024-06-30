@@ -36,6 +36,12 @@ namespace TMS.DataAccess.Configurations.Core
             builder.Property(b => b.EndDate)
             .IsRequired();
 
+            builder.Property(b => b.AcceptDate)
+           .IsRequired();
+
+            builder.Property(b => b.FinishDate)
+            .IsRequired();
+
         }
     }
 }

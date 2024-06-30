@@ -173,6 +173,9 @@ namespace TMS.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<DateTime>("AcceptDate")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<Guid>("AssignedUserId")
                         .HasColumnType("uuid");
 
@@ -184,6 +187,9 @@ namespace TMS.DataAccess.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("EndDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("FinishDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("Priority")
