@@ -7,7 +7,6 @@ import Select from "antd/es/select";
 import { Option } from "antd/es/mentions";
 import { format } from 'date-fns';
 import { getUsersbyRole } from "../services/tasks";
-import { Button } from "antd";
 import { Role } from "../enums/Role";
 
 interface Props {

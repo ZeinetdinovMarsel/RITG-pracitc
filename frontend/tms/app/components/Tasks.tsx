@@ -2,9 +2,8 @@ import Card from "antd/es/card/Card";
 import { CardTitle } from "./Cardtitle";
 import Button from "antd/es/button/button";
 import { useEffect, useState } from "react";
-import { changeStateTask, getAllTasks, getUsersbyRole } from "../services/tasks";
+import { getUsersbyRole } from "../services/tasks";
 import { Role } from "../enums/Role";
-import { message } from "antd";
 
 interface Props {
     tasks: Task[];
@@ -60,7 +59,6 @@ export const Tasks = ({ tasks, handleDelete, handleOpen, handleAccept, userRole,
     return (
         <div className="cards">
             {sortedTasks.map((task: Task) => (
-                // Check if user is Performer and task status is not completed (status !== 3)
                 !(userRole === Role.Performer && task.status === 3) && (
                     <Card
                         key={task.id}

@@ -3,10 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Modal, message } from "antd";
 import Title from "antd/es/typography/Title";
 import { useRouter } from "next/navigation";
-
 import { Role } from "../enums/Role";
-import { getUserRole } from "../services/login";
-
 import { RegisterRequest, createUser, deleteUser, getAllUsers, updateUser } from "../services/users";
 import { User } from "../Models/User";
 import UserList from "../components/UserList";

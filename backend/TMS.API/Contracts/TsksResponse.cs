@@ -20,6 +20,7 @@
         DateTime EndDate
     );
     public record TsksRequest(
+        Guid CreatorId,
         Guid AssignedUserId,
         string Title,
         string Comment,

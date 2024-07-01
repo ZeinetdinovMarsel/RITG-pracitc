@@ -35,23 +35,31 @@ namespace TMS.Core.Models
         public DateTime EndDate { get; }
         public DateTime AcceptDate { get; }
         public DateTime FinishDate { get; }
-        public static (Tsk Tsk, string Error) Create(
-            Guid id, Guid creatorId, Guid assignedUserId,
-            string title, string comment,
-            int priority, int status,
-            DateTime startDate, DateTime endDate,
-            DateTime acceptDate, DateTime finishDate)
+        public static (Tsk Tsk, string Error) Create(TaskModel tsk)
         {
             var error = string.Empty;
-            if (string.IsNullOrEmpty(title) || title.Length > MAX_TITLE_LENGTH)
+            if (string.IsNullOrEmpty(tsk.Title) || tsk.Title.Length > MAX_TITLE_LENGTH)
             {
                 error = $"Название не может быть пустым или длиннее чем {MAX_TITLE_LENGTH} символов";
             }
-            else if (startDate >= endDate)
+            else if (tsk.StartDate >= tsk.EndDate)
             {
                 error = "Дата конца не может быть раньше или равна дате начала";
             }
-            var Tsk = new Tsk(id, creatorId, assignedUserId, title, comment, priority, status, startDate, endDate, acceptDate, finishDate);
+
+            var Tsk = new Tsk(
+                tsk.Id,
+                tsk.CreatorId, 
+                tsk.AssignedUserId, 
+                tsk.Title, 
+                tsk.Comment, 
+                tsk.Priority, 
+                tsk.Status, 
+                tsk.StartDate, 
+                tsk.EndDate, 
+                tsk.AcceptDate, 
+                tsk.FinishDate);
+
             return (Tsk, error);
         }
 

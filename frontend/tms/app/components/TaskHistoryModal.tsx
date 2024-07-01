@@ -14,8 +14,19 @@ const TaskHistoryModal: React.FC<TaskHistoryModalProps> = ({
     onClose,
     taskHistory,
 }) => {
-
     const [users, setUsers] = useState<{ userId: string; name: string }[]>([]);
+
+    const statusLabels: { [key: number]: string } = {
+        1: "Не принят",
+        2: "Принят",
+        3: "Завершён",
+    };
+
+    const priorityLabels: { [key: number]: string } = {
+        1: "Низкий",
+        2: "Средний",
+        3: "Высокий",
+    };
 
     useEffect(() => {
         const getUsers = async () => {
@@ -23,7 +34,12 @@ const TaskHistoryModal: React.FC<TaskHistoryModalProps> = ({
                 const usersDataPerformer = await getUsersbyRole(Role.Performer);
                 const usersDataManager = await getUsersbyRole(Role.Manager);
                 const usersDataAdmin = await getUsersbyRole(Role.Admin);
-                const usersData = [...usersDataPerformer, ...usersDataManager, ...usersDataAdmin];
+                
+                const usersData = [
+                    ...usersDataPerformer,
+                    ...usersDataManager,
+                    ...usersDataAdmin,
+                ];
                 setUsers(usersData);
             } catch (error) {
                 console.error("Неизвестная ошибка: ", error);
@@ -34,8 +50,24 @@ const TaskHistoryModal: React.FC<TaskHistoryModalProps> = ({
     }, []);
 
     const findUserNameById = (userId: string) => {
-        const user = users.find(user => user.userId === userId);
-        return user ? user.name : 'Неизвестный пользователь';
+        const user = users.find((user) => user.userId === userId);
+        return user ? user.name : "Неизвестный пользователь";
+    };
+
+    const parseChanges = (changes: string) => {
+        const changeItems = changes.split(", ").map((change) => {
+            if (change.includes("Статус:")) {
+                return change.replace(/Статус: (\d) -> (\d)/, (_, from, to) =>
+                    `Статус: ${statusLabels[Number(from)]} -> ${statusLabels[Number(to)]}`
+                );
+            } else if (change.includes("Приоритет:")) {
+                return change.replace(/Приоритет: (\d) -> (\d)/, (_, from, to) =>
+                    `Приоритет: ${priorityLabels[Number(from)]} -> ${priorityLabels[Number(to)]}`
+                );
+            }
+            return change;
+        });
+        return changeItems;
     };
 
     const columns = [
@@ -56,20 +88,18 @@ const TaskHistoryModal: React.FC<TaskHistoryModalProps> = ({
             dataIndex: "changes",
             key: "changes",
             render: (changes: string) => {
+                const firstColonIndex = changes.indexOf(":") + 1;
 
-                const firstColonIndex = changes.indexOf(':') + 1;
-        
                 let title = changes;
                 let changeItems = [];
-        
-                if (firstColonIndex !== -1) {
 
+                if (firstColonIndex !== -1) {
                     title = changes.substring(0, firstColonIndex);
                     const rest = changes.substring(firstColonIndex);
 
-                    changeItems = rest.split(", ");
+                    changeItems = parseChanges(rest);
                 }
-        
+
                 return (
                     <div>
                         <strong>{title}</strong>
@@ -81,8 +111,7 @@ const TaskHistoryModal: React.FC<TaskHistoryModalProps> = ({
                     </div>
                 );
             },
-        }
-        
+        },
     ];
 
     return (

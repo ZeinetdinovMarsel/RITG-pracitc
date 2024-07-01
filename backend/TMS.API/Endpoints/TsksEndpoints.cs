@@ -5,6 +5,7 @@ using TMS.Core.Models;
 using TMS.API.Extentions;
 using TMS.Core.Enums;
 using TMS.Application.Services;
+using TMS.DataAccess.Entities;
 
 namespace TMS.API.Endpoints
 {
@@ -57,18 +58,23 @@ namespace TMS.API.Endpoints
 
             var user = await usersService.GetUserFromToken(token);
 
-            var (tsk, error) = Tsk.Create(
-                Guid.NewGuid(),
-                user.Id,
-                request.AssignedUserId,
-                request.Title,
-                request.Comment,
-                request.Priority,
-                request.Status,
-                request.StartDate,
-                request.EndDate,
-                DateTime.UtcNow.Date,
-                DateTime.UtcNow.Date);
+            var task = new TaskModel()
+            {
+                Id = Guid.NewGuid(),
+                CreatorId = user.Id,
+                AssignedUserId = request.AssignedUserId,
+                Title = request.Title,
+                Comment = request.Comment,
+                Priority = request.Priority,
+                Status = request.Status,
+                StartDate = request.StartDate,
+                EndDate = request.EndDate,
+                AcceptDate = DateTime.UtcNow.Date,
+                FinishDate = DateTime.UtcNow.Date
+            };
+
+            var (tsk, error) = Tsk.Create(task);
+
 
             if (!string.IsNullOrEmpty(error))
                 return Results.BadRequest(error);
@@ -89,19 +95,23 @@ namespace TMS.API.Endpoints
             var token = context.Request.Cookies["jwt"];
 
             var user = await usersService.GetUserFromToken(token);
+            
+            var task = new TaskModel()
+            {
+                Id = id,
+                CreatorId = request.CreatorId,
+                AssignedUserId = request.AssignedUserId,
+                Title= request.Title,
+                Comment = request.Comment,
+                Priority = request.Priority,
+                Status = request.Status,
+                StartDate = request.StartDate,
+                EndDate = request.EndDate,
+                AcceptDate = DateTime.UtcNow.Date,
+                FinishDate = DateTime.UtcNow.Date
+            };
 
-            var (tsk, error) = Tsk.Create(
-                id,
-                user.Id,
-                request.AssignedUserId,
-                request.Title,
-                request.Comment,
-                request.Priority,
-                request.Status,
-                request.StartDate,
-                request.EndDate,
-               DateTime.UtcNow.Date,
-                DateTime.UtcNow.Date);
+            var (tsk, error) = Tsk.Create(task);
 
 
             if (!string.IsNullOrEmpty(error))
@@ -153,5 +163,9 @@ namespace TMS.API.Endpoints
 
             return Results.Ok(response);
         }
+
+        
     }
+
+
 }

@@ -24,12 +24,23 @@ namespace TMS.DataAccess.Repositories
 
             if (tskEntity == null) return (null, "Не найден");
 
-            var (tsk, error) = Tsk.Create(
-                tskEntity.Id, tskEntity.CreatorId, tskEntity.AssignedUserId,
-                tskEntity.Title, tskEntity.Comment,
-                tskEntity.Priority, tskEntity.Status,
-                tskEntity.StartDate, tskEntity.EndDate,
-                tskEntity.AcceptDate, tskEntity.EndDate);
+            var task = new TaskModel()
+            {
+                Id = tskEntity.Id,
+                CreatorId = tskEntity.CreatorId,
+                AssignedUserId = tskEntity.AssignedUserId,
+                Title = tskEntity.Title,
+                Comment = tskEntity.Comment,
+                Priority = tskEntity.Priority,
+                Status = tskEntity.Status,
+                StartDate = tskEntity.StartDate,
+                EndDate = tskEntity.EndDate,
+                AcceptDate = DateTime.UtcNow.Date,
+                FinishDate = DateTime.UtcNow.Date
+            };
+
+            var (tsk, error) = Tsk.Create(task);
+
 
             return (tsk, error);
         }
@@ -80,14 +91,29 @@ namespace TMS.DataAccess.Repositories
                 taskEntities = [];
             }
 
-            var tasks = taskEntities
-                .Select(t => Tsk.Create(
-                    t.Id, t.CreatorId, t.AssignedUserId,
-                    t.Title, t.Comment, t.Priority, t.Status,
-                    t.StartDate, t.EndDate, t.AcceptDate, t.FinishDate).Tsk)
+
+            var tasksModels = taskEntities
+               .Select(t => new TaskModel()
+               {
+                   Id = t.Id,
+                   CreatorId = t.CreatorId,
+                   AssignedUserId = t.AssignedUserId,
+                   Title = t.Title,
+                   Comment = t.Comment,
+                   Priority = t.Priority,
+                   Status = t.Status,
+                   StartDate = t.StartDate,
+                   EndDate = t.EndDate,
+                   AcceptDate = DateTime.UtcNow.Date,
+                   FinishDate = DateTime.UtcNow.Date
+               }).ToList();
+
+
+            var tsks = tasksModels
+                .Select(t => Tsk.Create(t).Tsk)
                 .ToList();
 
-            return tasks;
+            return tsks;
         }
 
         public async Task<Guid> Create(Tsk task)
@@ -118,7 +144,6 @@ namespace TMS.DataAccess.Repositories
 
             var newTskEntity = new TskEntity
             {
-                CreatorId = tsk.CreatorId,
                 AssignedUserId = tsk.AssignedUserId,
                 Title = tsk.Title,
                 Comment = tsk.Comment,
@@ -130,7 +155,6 @@ namespace TMS.DataAccess.Repositories
             await _context.Tsks
                 .Where(t => t.Id == id)
                 .ExecuteUpdateAsync(s => s
-                    .SetProperty(t => t.CreatorId, t => newTskEntity.CreatorId)
                     .SetProperty(t => t.AssignedUserId, t => newTskEntity.AssignedUserId)
                     .SetProperty(t => t.Title, t => newTskEntity.Title)
                     .SetProperty(t => t.Comment, t => newTskEntity.Comment)

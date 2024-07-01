@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { Button, message, Card, Row, Col, Statistic } from "antd";
+import { message, Card, Row, Col, Statistic } from "antd";
 
 interface Report {
   date: string;
