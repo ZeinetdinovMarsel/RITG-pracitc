@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\TMS.API.csproj": {}
+    "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.API\\TMS.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\TMS.API.csproj": {
+    "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.API\\TMS.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\TMS.API.csproj",
+        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.API\\TMS.API.csproj",
         "projectName": "TMS.API",
-        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\TMS.API.csproj",
+        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.API\\TMS.API.csproj",
         "packagesPath": "C:\\Users\\marse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.API\\obj\\",
+        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,14 +33,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\TMS.Application.csproj": {
-                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\TMS.Application.csproj"
+              "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Application\\TMS.Application.csproj": {
+                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Application\\TMS.Application.csproj"
               },
-              "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj"
+              "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj"
               },
-              "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj"
+              "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj"
               }
             }
           }
@@ -156,14 +156,14 @@
         }
       }
     },
-    "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\TMS.Application.csproj": {
+    "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Application\\TMS.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\TMS.Application.csproj",
+        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Application\\TMS.Application.csproj",
         "projectName": "TMS.Application",
-        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\TMS.Application.csproj",
+        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Application\\TMS.Application.csproj",
         "packagesPath": "C:\\Users\\marse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\obj\\",
+        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -185,11 +185,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj": {
-                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj"
+              "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\TMS.Core.csproj": {
+                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\TMS.Core.csproj"
               },
-              "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj"
+              "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj"
               }
             }
           }
@@ -250,14 +250,14 @@
         }
       }
     },
-    "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj": {
+    "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\TMS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj",
+        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\TMS.Core.csproj",
         "projectName": "TMS.Core",
-        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj",
+        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\TMS.Core.csproj",
         "packagesPath": "C:\\Users\\marse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\obj\\",
+        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -329,14 +329,14 @@
         }
       }
     },
-    "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj": {
+    "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj",
         "projectName": "TMS.DataAccess",
-        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj",
+        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.DataAccess\\TMS.DataAccess.csproj",
         "packagesPath": "C:\\Users\\marse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -358,8 +358,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj": {
-                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj"
+              "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\TMS.Core.csproj": {
+                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\TMS.Core.csproj"
               }
             }
           }
@@ -430,14 +430,14 @@
         }
       }
     },
-    "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj": {
+    "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj",
         "projectName": "TMS.Infrastructure",
-        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\marse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -459,8 +459,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj": {
-                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Core\\TMS.Core.csproj"
+              "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\TMS.Core.csproj": {
+                "projectPath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Core\\TMS.Core.csproj"
               }
             }
           }

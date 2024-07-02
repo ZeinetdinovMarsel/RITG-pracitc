@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9DI5i8qwmZA=",
+  "dgSpecHash": "ecjOHyRQCns=",
   "success": true,
-  "projectFilePath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Infrastructure\\TMS.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marse\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\marse\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.6\\microsoft.aspnetcore.authentication.jwtbearer.8.0.6.nupkg.sha512",

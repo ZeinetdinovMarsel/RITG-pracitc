@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SJGQq2c6PDE=",
+  "dgSpecHash": "QSonfS70Ck0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\marse\\source\\repos\\RITG-pracitc\\backend\\TMS.Application\\TMS.Application.csproj",
+  "projectFilePath": "C:\\Users\\marse\\source\\repos\\RITG-practic-TMS\\backend\\TMS.Application\\TMS.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marse\\.nuget\\packages\\expressmapper\\1.9.1\\expressmapper.1.9.1.nupkg.sha512",
     "C:\\Users\\marse\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.6\\microsoft.aspnetcore.authentication.jwtbearer.8.0.6.nupkg.sha512",
